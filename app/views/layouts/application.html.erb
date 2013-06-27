@@ -42,13 +42,8 @@
             </ul>
           </li>
           <% else %>
-          <li class="dropdown last">
-            <a class="dropdown-toggle nav-link" id="dLabel" data-toggle="dropdown" href="#">Sign in</a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-              <li>
-                <%= link_to "Sign in", new_user_session_path %>
-              </li>
-            </ul>
+          <li class="last">
+            <%= link_to "Sign in", new_user_session_path, class: 'nav-link' %>
           </li>
           <% end %>
         </ul>
