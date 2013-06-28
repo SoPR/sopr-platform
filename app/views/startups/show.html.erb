@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @startup.name %>
+</p>
+
+<p>
+  <strong>Pitch:</strong>
+  <%= @startup.pitch %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @startup.website %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @startup.product %>
+</p>
+
+<p>
+  <strong>Market:</strong>
+  <%= @startup.market %>
+</p>
+
+<%= link_to 'Edit', edit_startup_path(@startup) %> |
+<%= link_to 'Back', startups_path %>

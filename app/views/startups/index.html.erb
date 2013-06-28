@@ -1,0 +1,35 @@
+<h1>Listing startups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Pitch</th>
+      <th>Website</th>
+      <th>Product</th>
+      <th>Market</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @startups.each do |startup| %>
+      <tr>
+        <td><%= startup.name %></td>
+        <td><%= startup.pitch %></td>
+        <td><%= startup.website %></td>
+        <td><%= startup.product %></td>
+        <td><%= startup.market %></td>
+        <td><%= link_to 'Show', startup %></td>
+        <td><%= link_to 'Edit', edit_startup_path(startup) %></td>
+        <td><%= link_to 'Destroy', startup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Startup', new_startup_path %>
