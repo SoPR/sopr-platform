@@ -24,7 +24,7 @@
           <li>Resources</li>
           <li><%= link_to 'Community Groups' %></li>
           <li><%= link_to 'Events', '/events' %></li>
-          <li><%= link_to 'People', '/people' %></li>
+          <li><%= link_to 'Users', users_path %></li>
           <li><%= link_to 'Startups', '/startups' %></li>
         </ul>
       </nav>
@@ -36,6 +36,9 @@
               <img class='user-image' src="<%= gravatar_for current_user %>">
             </a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <li>
+                <%= link_to "Edit Profile", edit_user_registration_path %>
+              </li>
               <li>
                 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
               </li>
