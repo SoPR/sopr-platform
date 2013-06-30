@@ -5,7 +5,9 @@ SoprPlatform::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
-  devise_for :users
+  devise_for :users do
+    get 'users', :to => 'devise/registrations#edit', :as => :user_root # Rails 3
+  end
 
   resources :startups
   resources :users
