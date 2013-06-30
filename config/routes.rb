@@ -10,6 +10,8 @@ SoprPlatform::Application.routes.draw do
   resources :startups
   resources :users
 
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
