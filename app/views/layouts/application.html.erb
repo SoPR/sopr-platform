@@ -55,6 +55,19 @@
   </div>
 </header>
 
+<% if notice or alert %>
+<section class="flash-message">
+  <div class="container">
+    <% if notice %>
+    <p class="notice"><%= notice %></p>
+    <% end %>
+
+    <% if alert %>
+    <p class="alert"><%= alert %></p>
+    <% end %>
+  </div>
+</section>
+<% end %>
 
 <%= yield %>
 
