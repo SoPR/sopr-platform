@@ -6,7 +6,7 @@ SoprPlatform::Application.routes.draw do
   root 'home#index'
 
   devise_for :users do
-    get 'users', :to => 'devise/registrations#edit', :as => :user_root # Rails 3
+    get 'users/edit', :to => 'devise/registrations#edit', :as => :user_root # Rails 3
   end
 
   resources :startups
