@@ -4,12 +4,16 @@ one:
   name: MyString
   pitch: MyString
   website: MyString
-  product: MyString
-  market: MyString
+  product: MyText
+  location: MyString
+  markets: MyString
+  user_id: 
 
 two:
   name: MyString
   pitch: MyString
   website: MyString
-  product: MyString
-  market: MyString
+  product: MyText
+  location: MyString
+  markets: MyString
+  user_id: 

@@ -1,5 +1,5 @@
 class StartupsController < ApplicationController
-
+  before_filter :authenticate_user!, except: [:index, :show]
   before_action :set_startup, only: [:show, :edit, :update, :destroy]
 
   # GET /startups
@@ -26,6 +26,9 @@ class StartupsController < ApplicationController
   # POST /startups.json
   def create
     @startup = Startup.new(startup_params)
+    @startup.user = current_user
+
+
 
     respond_to do |format|
       if @startup.save
@@ -70,6 +73,6 @@ class StartupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def startup_params
-      params.require(:startup).permit(:name, :pitch, :website, :product, :market)
+      params.require(:startup).permit(:name, :pitch, :website, :product, :location, :markets, :user_id, :image)
     end
 end

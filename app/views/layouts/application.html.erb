@@ -22,9 +22,9 @@
         <ul>
           <li>Discussions</li>
           <li>Resources</li>
-          <li><%= link_to 'Community Groups' %></li>
+          <li><%= link_to 'Groups' %></li>
           <li><%= link_to 'Events', '/events' %></li>
-          <li><%= link_to 'Users', users_path %></li>
+          <li><%= link_to 'People', users_path %></li>
           <li><%= link_to 'Startups', '/startups' %></li>
         </ul>
       </nav>
@@ -32,7 +32,7 @@
         <ul>
           <% if current_user %>
           <li class="dropdown last">
-            <a class="dropdown-toggle nav-link" id="dLabel" data-toggle="dropdown" href="#" style='padding:18px 20px;'>
+            <a class="dropdown-toggle nav-link" id="dLabel" data-toggle="dropdown" href="#" style='padding:20px;'>
               <img class='user-image' src="<%= gravatar_for current_user %>">
             </a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">

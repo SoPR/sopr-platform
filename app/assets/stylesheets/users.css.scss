@@ -1,14 +1,4 @@
-@media (min-width: 768px) and (max-width: 979px) {
-  .row-fluid {
-    > [class*=span]:nth-child(2n+1) {
-      clear: both;
-      margin-left: 0;
-    }
-    .span3 {
-      width: 48.61878453038674%;
-    }
-  }
-}
+
 
 .user-card {
     padding: 0;

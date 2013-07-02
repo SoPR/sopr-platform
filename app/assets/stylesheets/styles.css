@@ -39,7 +39,7 @@
   #menu ul li {
   line-height: 86px;
   float: left;
-  width: 136px;
+  width: 120.5px;
   position: relative;
   text-align: center;
   margin-top: -10px;
@@ -143,10 +143,6 @@
     text-decoration: none;
   }
 
-  .dropdown-menu li a:hover {
-    color:white;
-  }
-
   .user-image {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -155,56 +151,23 @@
   border-radius: 50%;
   }
 
-  /* Startups */
+/* Subheader */
 
 #subheader {
   background: #f8f8f8;
   border-bottom: 1px solid #ddd;
 }
 
-#subheader .made-in-pr {
-  padding: 9px 263px;
-}
-
-.blue-btn {
-  background: -webkit-gradient(linear, center top, center bottom, from(deg), color-stop(0, rgba(0,0,0,0.15)), to(rgba(0,0,0,0)));
-  background: -webkit-linear-gradient(90deg, rgba(0,0,0,0.15) 0, rgba(0,0,0,0) 100%);
-  background-color: #5b93fc;
-  border: 1px solid #4177bb;
-  -webkit-font-smoothing: subpixel-antialiased;
-}
-
-.btn-stylus {
-  float:right;
-  font-size: 13px;
+#subheader h1 {
+  font-size: 24px;
+  font-weight: 300;
   line-height: 24px;
-  height:21px;
-  padding:5px 20px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
-  color:white;
-  letter-spacing: 1px;
-  margin: 0 20px;
+  margin: 18px 0 0;
 }
 
-.btn-stylus:hover {
-  color:white;
+#subheader h2 {
+  font-size: 28.5px;
+  font-weight: 300;
+  line-height: 30px;
+  margin-bottom: 15px;
 }
-
-.sub-header-nav {
-  border-bottom: 1px solid #ddd;
-  padding: 15px 0;
-}
-
-.sub-header-nav p {
-  line-height: 20px;
-  padding-top: 7px;
-  margin: 0;
-  font-size: 15px;
-  color: #697181;
-  letter-spacing: 1px;
-}
-

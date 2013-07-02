@@ -7,7 +7,9 @@
       <th>Pitch</th>
       <th>Website</th>
       <th>Product</th>
-      <th>Market</th>
+      <th>Location</th>
+      <th>Markets</th>
+      <th>User</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,10 +20,12 @@
     <% @startups.each do |startup| %>
       <tr>
         <td><%= startup.name %></td>
+        <td><%= image_tag startup.image_url(:thumb).to_s %></td>
         <td><%= startup.pitch %></td>
         <td><%= startup.website %></td>
         <td><%= startup.product %></td>
-        <td><%= startup.market %></td>
+        <td><%= startup.location %></td>
+        <td><%= startup.markets %></td>
         <td><%= link_to 'Show', startup %></td>
         <td><%= link_to 'Edit', edit_startup_path(startup) %></td>
         <td><%= link_to 'Destroy', startup, method: :delete, data: { confirm: 'Are you sure?' } %></td>

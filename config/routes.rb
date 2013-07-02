@@ -1,4 +1,6 @@
 SoprPlatform::Application.routes.draw do
+  resources :startups
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -8,8 +10,6 @@ SoprPlatform::Application.routes.draw do
   devise_for :users do
     get 'users/edit', :to => 'devise/registrations#edit', :as => :user_root # Rails 3
   end
-
-  resources :startups
   resources :users
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
