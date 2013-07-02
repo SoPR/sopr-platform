@@ -1,3 +1,66 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@media (min-width: 768px) and (max-width: 979px) {
+  .row-fluid {
+    > [class*=span]:nth-child(2n+1) {
+      clear: both;
+      margin-left: 0;
+    }
+    .span3 {
+      width: 48.61878453038674%;
+    }
+  }
+}
+
+.user-card {
+    padding: 0;
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid #000;
+
+    .user-meta {
+        margin-top: 15px;
+        padding: 15px;
+
+        &.blue {
+            background-color: #70a5bd;
+        }
+
+        .user-avatar {
+            height: 40px;
+            width: 40px;
+            padding: 0;
+            display: inline-block;
+            overflow: hidden;
+            float: left;
+            margin-right: 10px;
+            -webkit-box-shadow: 0 1px 0 #fff;
+            box-shadow: 0 1px 0 #fff;
+            @include border-radius(20px);
+        }
+
+        .user-full-name {
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .user-job-title {
+            color: #FFFFFF;
+            font-size: 12px;
+        }
+    }
+
+    .user-about {
+        text-align: center;
+        padding: 15px;
+    }
+
+    .user-social {
+        @include horizontal-list;
+        padding: 15px;
+
+        a {
+            display: block;
+            margin: 0 14px 7px 0;
+        }
+    }
+}
