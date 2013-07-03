@@ -1,3 +1,107 @@
-// Place all the styles related to the startups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.usercard {
+  background:white;
+  border: 1px solid #ddd;
+  padding:20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  vertical-align: top;
+  .userimage {
+    padding: 0 36px;
+    .imagecard {
+        width:126px;
+        border: 4px solid orange;
+    }
+  }
+  .userinfo, .userabout {
+    float:left;
+    width:100%;
+    h1 {
+      font-size: 16px;
+      font-weight: 400;
+      text-align: center;
+      line-height: 16px;
+      margin: 20px 0 5px;
+    }
+    h3 {
+      font-size: 14px;
+      font-weight: 400;
+      text-align: center;
+      line-height: 16px;
+      margin: 12px 0;
+    }
+    p {
+      font-size: 13px;
+      text-align: center;
+      font-weight: 400;
+    }
+  }
+  .usersocial {
+    float:left;
+    width:100%;
+    ul {
+      list-style: none;
+      margin: 13px 0 0;
+      li {
+        font-size: 16px;
+        font-weight: 400;
+        float:left;
+        width: auto;
+        padding: 0 7px;
+      }
+    }
+  }
+}
+
+
+.user-card {
+
+    .user-meta {
+        margin-top: 15px;
+        padding: 15px;
+
+        &.blue {
+            background-color: #70a5bd;
+        }
+
+        .user-avatar {
+            height: 40px;
+            width: 40px;
+            padding: 0;
+            display: inline-block;
+            overflow: hidden;
+            float: left;
+            margin-right: 10px;
+            -webkit-box-shadow: 0 1px 0 #fff;
+            box-shadow: 0 1px 0 #fff;
+            @include border-radius(20px);
+        }
+
+        .user-full-name {
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .user-job-title {
+            color: #FFFFFF;
+            font-size: 12px;
+        }
+    }
+
+    .user-about {
+        text-align: center;
+        padding: 15px;
+    }
+
+    .user-social {
+        @include horizontal-list;
+        padding: 15px;
+
+        a {
+            display: block;
+            margin: 0 14px 7px 0;
+        }
+    }
+}

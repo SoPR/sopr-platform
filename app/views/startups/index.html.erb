@@ -1,39 +1,34 @@
-<h1>Listing startups</h1>
+<section id="subheader">
+  <div class="container">
+    <div class='row-fluid'>
+      <div class='span12'>
+        <h1>Startups</h1>
+        <h2>A collection of internet companies made with <i class='icon-heart-3 loved'></i> in PR</h2>
+      </div>
+    </div>
+  </div>
+</section>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Pitch</th>
-      <th>Website</th>
-      <th>Product</th>
-      <th>Location</th>
-      <th>Markets</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<% @startups.each do |startup| %>
+  <section id='content'>
+    <div class='container'>
+      <div class='row-fluid'>
+        <div class='span3 usercard'>
+          <div class='userimage'>
+            <%= image_tag(startup.image_url(:thumb), :class => "user-image") %>
+          </div>
+          <div class='userinfo'>
+            <h1><%= startup.name %></h1>
+            <h3><%= startup.markets %></h3>
+          </div>
+          <div class='userabout'>
+            <p><%= startup.pitch %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>
 
-  <tbody>
-    <% @startups.each do |startup| %>
-      <tr>
-        <td><%= startup.name %></td>
-        <td><%= image_tag startup.image_url(:thumb).to_s %></td>
-        <td><%= startup.pitch %></td>
-        <td><%= startup.website %></td>
-        <td><%= startup.product %></td>
-        <td><%= startup.location %></td>
-        <td><%= startup.markets %></td>
-        <td><%= link_to 'Show', startup %></td>
-        <td><%= link_to 'Edit', edit_startup_path(startup) %></td>
-        <td><%= link_to 'Destroy', startup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
 
 <%= link_to 'New Startup', new_startup_path %>
