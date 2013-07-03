@@ -11,13 +11,26 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
 
   def full_name
-    [first_name, last_name].join(' ')
+    if first_name and last_name
+      [first_name, last_name].join(' ')
+    end
   end
 
   def full_name=(name='')
     split = name.split(' ', 2)
     self.first_name = split.first
     self.last_name = split.last
+  end
+
+  def self.roles
+    user_roles = []
+    roles = ['developer', 'designer', 'hacker', 'entrepreneur', 'artist', 'business']
+
+    roles.each do |role|
+      user_roles.push([role.titlecase, role])
+    end
+
+    return user_roles
   end
 
   def self.find_first_by_auth_conditions(warden_conditions)
