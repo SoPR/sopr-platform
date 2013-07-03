@@ -13,16 +13,18 @@
   <section id='content'>
     <div class='container'>
       <div class='row-fluid'>
-        <div class='span3 usercard'>
-          <div class='userimage'>
-            <%= image_tag(startup.image_url(:thumb), :class => "user-image") %>
+        <div class='span6 startupscard'>
+          <div class='startupimage'>
+            <%= image_tag(startup.image_url(:thumb), :class => "startup-image") %>
           </div>
-          <div class='userinfo'>
+          <div class='startupinfo'>
             <h1><%= startup.name %></h1>
+            <h2><%= startup.pitch %></h2>
             <h3><%= startup.markets %></h3>
+            <h6><%= startup.website %></h6>
           </div>
-          <div class='userabout'>
-            <p><%= startup.pitch %></p>
+          <div class='startupabout'>
+            <p><%= startup.product %></p>
           </div>
         </div>
       </div>
