@@ -17,9 +17,8 @@
          <h1>Startup of Puerto Rico</h1>
         <% end %>
       </div>
-      <nav id='menu'>
+      <nav id='menu' class="span8">
         <ul>
-          <li>Discussions</li>
           <li>Resources</li>
           <li><%= link_to 'Groups' %></li>
           <li><%= link_to 'Events', '/events' %></li>
@@ -27,11 +26,11 @@
           <li><%= link_to 'Startups', '/startups' %></li>
         </ul>
       </nav>
-      <div class='span3 authentication'>
+      <div class='span2 authentication'>
         <ul>
           <% if current_user %>
           <li class="dropdown last">
-            <a class="dropdown-toggle nav-link" id="dLabel" data-toggle="dropdown" href="#" style='padding:20px;'>
+            <a class="dropdown-toggle nav-link" id="dLabel" data-toggle="dropdown" href="#">
               <img class='user-image' src="<%= gravatar_for current_user %>">
             </a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
