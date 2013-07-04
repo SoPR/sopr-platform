@@ -3,7 +3,7 @@
     <div class='row-fluid'>
       <div class='span12'>
         <h1>Startups</h1>
-        <h2>A collection of internet companies made with <i class='icon-heart-3 loved'></i> in PR</h2>
+        <h2>A collection of internet companies made with <i class='icon-heart-1 loved'></i> in PR</h2>
       </div>
     </div>
   </div>
@@ -13,18 +13,31 @@
   <section id='content'>
     <div class='container'>
       <div class='row-fluid'>
-        <div class='span6 startupscard'>
-          <div class='startupimage'>
-            <%= image_tag(startup.image_url(:thumb), :class => "startup-image") %>
-          </div>
-          <div class='startupinfo'>
-            <h1><%= startup.name %></h1>
-            <h2><%= startup.pitch %></h2>
-            <h3><%= startup.markets %></h3>
-            <h6><%= startup.website %></h6>
+        <div class='span6 startupcard'>
+          <div class='startupcard-header'>
+            <div class='startupimage'>
+              <%= image_tag(startup.image_url(:thumb), :class => "startuplogo") %>
+            </div>
+            <div class='startupinfo'>
+              <div class='startupinfo-head'>
+                <h1><%= startup.name %></h1>
+              </div>
+              <div class='clearfix'></div>
+              <div class='startupcontent'>
+                <div class='startuppitch'>
+                  <%= startup.pitch %>
+                </div>
+                <div class='startuptags'>
+                   <ul> 
+                    <li><a target='_blank' href="<%= startup.website %>"><i class='icon-globe-2'></i></a></li>
+                    <li class='markets'><%= startup.markets %></li>
+                   </ul>
+                </div>
+              </div>
+            </div>
           </div>
           <div class='startupabout'>
-            <p><%= startup.product %></p>
+            <%= startup.product %>
           </div>
         </div>
       </div>

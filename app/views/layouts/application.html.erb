@@ -17,7 +17,7 @@
          <h1>Startup of Puerto Rico</h1>
         <% end %>
       </div>
-      <nav id='menu' class="span8">
+      <nav id='menu' class='span8'>
         <ul>
           <li>Resources</li>
           <li><%= link_to 'Groups' %></li>
@@ -31,6 +31,7 @@
           <% if current_user %>
           <li class="dropdown last">
             <a class="dropdown-toggle nav-link" id="dLabel" data-toggle="dropdown" href="#">
+            <a class="dropdown-toggle nav-link" id="dLabel" data-toggle="dropdown" href="#" style='padding:10px 29px;'>
               <img class='user-image' src="<%= gravatar_for current_user %>">
             </a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">

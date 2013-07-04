@@ -9,12 +9,27 @@
   width: 100%;
 }
 
+
 .logo {
   border-right: 1px solid #ddd;
 }
 
 .logo h1 {
   background: url('logo.png') no-repeat;
+}
+ 
+#header .span8 {
+    margin-left: 0;
+  }
+
+  .logo {
+  border-right: 1px solid #ddd;
+  margin-top: 0px;
+  padding: 0;
+  }
+
+  .logo h1 {
+  background: url('negro.png') no-repeat;
   position: relative;
   text-indent: -9999px;
   height: 65px;
@@ -51,7 +66,10 @@
 }
 
 /* Header Authentication */
-#header .authentication {
+
+  #header .authentication {
+  float: right;
+  width:10.076923%;
   margin-left: 0;
 }
 
@@ -98,6 +116,48 @@
   text-decoration: none;
 }
 
+.authentication ul .first .nav-link, .authentication ul .last .nav-link {
+display: block;
+padding: 10px 20px;
+border: solid #ddd;
+border-width: 0 0 0 1px;
+margin-top: 0px;
+line-height: 45px;
+font-weight: 600;
+}
+
+.authentication i {
+  position:relative;
+  left:-10px;
+}
+
+.authentication .post {
+  left:-4px;
+  top:2px;
+}
+
+.authentication .login-btn {
+  float:right;
+  font-size: 13px;
+  line-height: 21px;
+  padding:5px 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  color:white;
+  letter-spacing: 1px;
+  margin: 0 20px;
+}
+
+.authentication .blue-btn {
+  background: -webkit-gradient(linear, center top, center bottom, from(deg), color-stop(0, rgba(0,0,0,0.15)), to(rgba(0,0,0,0)));
+  background: -webkit-linear-gradient(90deg, rgba(0,0,0,0.15) 0, rgba(0,0,0,0) 100%);
+  background-color: #5b93fc;
+  border: 1px solid #4177bb;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
 
 #navigation {
   padding-bottom: 1px;

@@ -1,33 +1,106 @@
+$radius: 3px;
+
 .startupcard {
   background:#fff;
   border: 1px solid #ddd;
   padding:20px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
   display: inline-block;
   vertical-align: top;
-  .startupinfo, .startupabout {
-    float:left;
-    width:100%;
-    h1 {
-      font-size: 16px;
-      font-weight: 400;
-      text-align: center;
-      line-height: 16px;
-      margin: 20px 0 5px;
+  -webkit-box-shadow: 0 1px 16px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.1);
+  .startupimage {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    float: left;
+    line-height: 86px;
+    margin-right: 20px;
+    height: 90px;
+    width: 90px;
+    padding: 5px;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+    .startuplogo {
+    width:90px;
+    height:90px;
+    vertical-align: middle;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
     }
-    h3 {
+  }
+  .startupinfo {
+    margin: 0;
+    vertical-align: middle;
+    overflow: hidden;
+    .startupinfo-head {
+      vertical-align: middle;
+      h1 {
+        float: left;
+        margin: 5px 0 7px;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 18px;
+        font-weight: 600;
+      }
+    }
+  .clearfix {
+    clear: both;
+  }
+  .startupcontent {
+      float: left;
+      vertical-align: middle;
+      max-width: 97%;
+      min-width: 120px;
       font-size: 14px;
-      font-weight: 400;
-      text-align: center;
-      line-height: 16px;
-      margin: 12px 0;
+      margin-top: 6px;
+      .startuppitch {
+        font-weight: 500;
+        font-size: 14px;
+        color: #141823;
+        margin-bottom: 4px;
+      }
+      .startuptags {
+        line-height: 16px;
+        margin: 8px 0 0;
+        background: none;
+        padding: 0;
+        float: left;
+        width:100%;
+        ul {
+          float: left;
+          width: 100%;
+          margin: 2px 0 0 0px;
+          list-style: none;
+          font-size: 12px;
+          line-height: 16px;
+          background: none;
+          padding: 0;
+          li {
+            float: left;
+            padding-right: 16px;
+          }
+          .markets {
+            margin-top:-1px;
+            font-weight:500;
+          }
+        }
+      }
     }
-    p {
-      font-size: 13px;
-      text-align: center;
-      font-weight: 400;
-    }
+  }
+  .startupabout {
+    width: 100%;
+    margin-top: 12px;
+    overflow: hidden;
+    vertical-align: top;
+    min-width: 200px;
+    margin: 20px 0 0;
+    float: left;
+    font-size: 13px;
+    font-weight: 400;
   }
 }
