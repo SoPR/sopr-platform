@@ -28,8 +28,10 @@
                   <%= startup.pitch %>
                 </div>
                 <div class='startuptags'>
-                   <ul> 
-                    <li><a target='_blank' href="<%= startup.website %>"><i class='icon-globe-2'></i></a></li>
+                   <ul>
+                    <% unless startup.website.blank? %> 
+                      <li><a target='_blank' href="<%= startup.website %>"><i class='icon-globe-2'></i></a></li>
+                    <% end %>
                     <li class='markets'><%= startup.markets %></li>
                    </ul>
                 </div>
