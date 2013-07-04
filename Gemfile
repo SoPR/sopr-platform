@@ -52,5 +52,6 @@ gem 'rmagick'
 
 gem 'rails_12factor', group: :production
 gem 'pg', group: :production
+gem 'unicorn', group: :production
 
 gem "asset_sync"
