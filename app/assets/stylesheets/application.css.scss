@@ -1,12 +1,8 @@
-@import "compass";
 @import "reset";
 @import "reset-responsive";
 @import "fontello";
 @import "fontello-ie7";
 @import "fontello-embedded";
-
-@import "icons/*.png";
-@include all-icons-sprites(true);
 
 @import "styles";
 
