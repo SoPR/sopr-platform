@@ -32,7 +32,8 @@ class StartupsController < ApplicationController
 
     respond_to do |format|
       if @startup.save
-        format.html { redirect_to @startup, notice: 'Startup was successfully created.' }
+        format.html { redirect_to startups_path,
+          notice: 'Startup was successfully created.' }
         format.json { render action: 'show', status: :created, location: @startup }
       else
         format.html { render action: 'new' }
@@ -68,7 +69,14 @@ class StartupsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_startup
-      @startup = Startup.find(params[:id])
+      begin
+        @startup = Startup.find_by_id_and_user_id!(params[:id], current_user)
+      rescue ActiveRecord::RecordNotFound
+        respond_to do |format|
+          format.html { redirect_to startups_path }
+          format.json { head :forbidden }
+        end
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
