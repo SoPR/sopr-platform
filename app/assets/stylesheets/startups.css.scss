@@ -1,3 +1,6 @@
+$title-color: #141823;
+$subtitle-color: #6a7181;
+$info-color: #adb2bb;
 $radius: 3px;
 
 .startupcard {
@@ -40,6 +43,7 @@ $radius: 3px;
     .startupinfo-head {
       vertical-align: middle;
       h1 {
+        color: $title-color;
         float: left;
         margin: 5px 0 7px;
         font-weight: bold;
@@ -61,7 +65,7 @@ $radius: 3px;
       .startuppitch {
         font-weight: 500;
         font-size: 14px;
-        color: #141823;
+        color: $subtitle-color;
         margin-bottom: 4px;
       }
       .startuptags {
@@ -83,6 +87,10 @@ $radius: 3px;
           li {
             float: left;
             padding-right: 16px;
+            color:  $info-color;
+            i {
+              color: $info-color;
+            }
           }
           .markets {
             margin-top:-1px;
