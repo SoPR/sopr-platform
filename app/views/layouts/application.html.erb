@@ -37,6 +37,16 @@
               <li>
                 <%= link_to "Edit Profile", edit_user_registration_path %>
               </li>
+              <li class="separator"></li>
+              <% current_user.startups.each do |startup| %>
+              <li>
+                <%= link_to startup.name, edit_startup_path(startup) %>
+              </li>
+              <% end %>
+              <li>
+                <%= link_to "Create Startup Profile", new_startup_path %>
+              </li>
+              <li class="separator"></li>
               <li>
                 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
               </li>
