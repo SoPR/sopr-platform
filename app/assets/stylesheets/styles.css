@@ -76,30 +76,28 @@
   width: 40px;
 }
 
-.authentication i {
-  position: relative;
-  left: -10px;
+.authentication .dropdown-menu li.separator {
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #e7e9eb;
+  margin: 3px 0 3px;
+  padding: 0;
 }
 
-.authentication .post {
-  left: -4px;
-  top: 2px;
+.dropdown-menu li {
+  padding: 0;
+  float: none;
 }
 
-.authentication .login-btn {
-  float: right;
-  font-size: 13px;
-  line-height: 21px;
-  padding: 5px 20px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
-  color: white;
-  letter-spacing: 1px;
-  margin: 0 20px;
+.dropdown-menu > li > a {
+  font-size: 12px;
+  padding: 3px 12px;
 }
+
+.dropdown-menu > li > a:hover {
+  color: #06AEF9;
+  text-decoration: none;
+}
+
 
 #navigation {
   padding-bottom: 1px;
