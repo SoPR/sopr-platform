@@ -18,7 +18,7 @@ class StartupsControllerTest < ActionController::TestCase
 
   test "should create startup" do
     assert_difference('Startup.count') do
-      post :create, startup: { location: @startup.location, markets: @startup.markets, name: @startup.name, pitch: @startup.pitch, product: @startup.product, user_id: @startup.user_id, website: @startup.website }
+      post :create, startup: { markets: @startup.markets, name: @startup.name, pitch: @startup.pitch, product: @startup.product, user_id: @startup.user_id, website: @startup.website }
     end
 
     assert_redirected_to startup_path(assigns(:startup))
@@ -35,7 +35,7 @@ class StartupsControllerTest < ActionController::TestCase
   end
 
   test "should update startup" do
-    patch :update, id: @startup, startup: { location: @startup.location, markets: @startup.markets, name: @startup.name, pitch: @startup.pitch, product: @startup.product, user_id: @startup.user_id, website: @startup.website }
+    patch :update, id: @startup, startup: { markets: @startup.markets, name: @startup.name, pitch: @startup.pitch, product: @startup.product, user_id: @startup.user_id, website: @startup.website }
     assert_redirected_to startup_path(assigns(:startup))
   end
 
