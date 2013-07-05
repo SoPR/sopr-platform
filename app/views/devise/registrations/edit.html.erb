@@ -1,92 +1,97 @@
-<div class='container'>
+<div class='content'>
+  <div class='container'>
+    <div class='row-fluid'>
+      <h2 class='section-name'>Edit <%= resource_name.to_s.humanize %></h2>
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="tabbable tabs-left">
+          <ul class="nav nav-tabs sidebarstyle">
+            <li class="active"><a href="#tab1" data-toggle="tab"><span>Account</span></a></li>
+            <li><a href="#tab2" data-toggle="tab">Profile</a></li>
+            <li><a href="#tab3" data-toggle="tab">Scoop</a></li>
+            <li><a href="#tab4" data-toggle="tab">Password</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab1">
+              <div>
+                <%= f.label :username %>
+                <%= f.text_field :username %>
+              </div>
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+              <% end %>
+              <div>
+                <%= f.label :email %>
+                <%= f.email_field :email %>
+              </div>
+              <h3>Cancel my account</h3>
 
-  <div class='row-fluid'>
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+              <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+            </div>
+            <div class="tab-pane" id="tab2">
+              <div>
+                    <%= f.label :role %>
+                    <%= f.select :role, User.roles, :prompt => true %>
+                  </div>
+                  <div>
+                    <%= f.label :full_name %>
+                    <%= f.text_field :full_name %>
+                  </div>
+                   <div>
+                    <%= f.label :bio %>
+                    <%= f.text_area :bio, :max_length => 140 %>
+                  </div>
+            </div>
+            <div class="tab-pane" id="tab3">
+              <div>
+                    <%= f.label :github_username %>
+                    <%= f.text_field :github_username %>
+                  </div>
 
-    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-      <%= devise_error_messages! %>
+                  <div>
+                    <%= f.label :dribbble_username %>
+                    <%= f.text_field :dribbble_username %>
+                  </div>
 
-      <div>
-        <%= f.label :role %>
-        <%= f.select :role, User.roles, :prompt => true %>
-      </div>
+                  <div>
+                    <%= f.label :linkedin_username %>
+                    <%= f.text_field :linkedin_username %>
+                  </div>
 
-      <div>
-        <%= f.label :full_name %>
-        <%= f.text_field :full_name %>
-      </div>
+                  <div>
+                    <%= f.label :flickr_username %>
+                    <%= f.text_field :flickr_username %>
+                  </div>
 
-      <div>
-        <%= f.label :username %>
-        <%= f.text_field :username %>
-      </div>
+                  <div>
+                    <%= f.label :facebook_username %>
+                    <%= f.text_field :facebook_username %>
+                  </div>
 
-      <div>
-        <%= f.label :email %>
-        <%= f.email_field :email %>
-      </div>
+                  <div>
+                    <%= f.label :twitter_username %>
+                    <%= f.text_field :twitter_username %>
+                  </div>
 
-      <div>
-        <%= f.label :bio %>
-        <%= f.text_area :bio, :max_length => 140 %>
-      </div>
-
-      <div>
-        <%= f.label :github_username %>
-        <%= f.text_field :github_username %>
-      </div>
-
-      <div>
-        <%= f.label :dribbble_username %>
-        <%= f.text_field :dribbble_username %>
-      </div>
-
-      <div>
-        <%= f.label :linkedin_username %>
-        <%= f.text_field :linkedin_username %>
-      </div>
-
-      <div>
-        <%= f.label :flickr_username %>
-        <%= f.text_field :flickr_username %>
-      </div>
-
-      <div>
-        <%= f.label :facebook_username %>
-        <%= f.text_field :facebook_username %>
-      </div>
-
-      <div>
-        <%= f.label :twitter_username %>
-        <%= f.text_field :twitter_username %>
-      </div>
-
-      <div>
-        <%= f.label :website_url %>
-        <%= f.url_field :website_url %>
-      </div>
-
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                  <div>
+                    <%= f.label :website_url %>
+                    <%= f.url_field :website_url %>
+                  </div>
+            </div>
+            <div class="tab-pane" id="tab4">
+              <div>
+                    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br>
+                    <%= f.password_field :password, :autocomplete => "off" %>
+                  </div>
+                  <div>
+                    <%= f.label :password_confirmation %>
+                    <%= f.password_field :password_confirmation %>
+                  </div>
+            </div>
+          </div>
+        </div>
+        <div><%= f.submit "Update" %></div>
       <% end %>
-
-      <div>
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br>
-        <%= f.password_field :password, :autocomplete => "off" %>
-      </div>
-
-      <div>
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation %>
-      </div>
-
-      <div><%= f.submit "Update" %></div>
-    <% end %>
-
-    <h3>Cancel my account</h3>
-
-    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
-
+    </div>
   </div>
-
 </div>

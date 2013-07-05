@@ -10,73 +10,9 @@
 </head>
 <body>
 
-<header id='header'>
-  <div class='container'>
-    <div class='row-fluid'>
-      <div class='logo span2'>
-        <%= link_to '/' do %>
-         <h1>Startup of Puerto Rico</h1>
-        <% end %>
-      </div>
-      <nav id='menu' class='span8'>
-        <ul>
-          <li>Resources</li>
-          <li><%= link_to 'Groups' %></li>
-          <li><%= link_to 'Events', '/events' %></li>
-          <li><%= link_to 'People', users_path %></li>
-          <li><%= link_to 'Startups', '/startups' %></li>
-        </ul>
-      </nav>
-      <div class='span2 authentication'>
-        <ul>
-          <% if current_user %>
-          <li class="dropdown last">
-            <a class="dropdown-toggle nav-link" id="dLabel" data-toggle="dropdown" href="#" style='padding:10px 29px;'>
-              <img class='user-image' src="<%= gravatar_for current_user %>">
-            </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-              <li>
-                <%= link_to "Edit Profile", edit_user_registration_path %>
-              </li>
-              <li class="separator"></li>
-              <% current_user.startups.each do |startup| %>
-              <li>
-                <%= link_to startup.name, edit_startup_path(startup) %>
-              </li>
-              <% end %>
-              <li>
-                <%= link_to "Create Startup Profile", new_startup_path %>
-              </li>
-              <li class="separator"></li>
-              <li>
-                <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-              </li>
-            </ul>
-          </li>
-          <% else %>
-          <li class="last">
-            <%= link_to "Sign in", new_user_session_path, class: 'nav-link' %>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  </div>
-</header>
+<%= render 'shared/header' %>
 
-<% if notice or alert %>
-<section class="flash-message">
-  <div class="container">
-    <% if notice %>
-    <p class="notice"><%= notice %></p>
-    <% end %>
-
-    <% if alert %>
-    <p class="alert"><%= alert %></p>
-    <% end %>
-  </div>
-</section>
-<% end %>
+<%= render 'shared/notifications' %>
 
 <%= yield %>
 

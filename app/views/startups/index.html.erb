@@ -9,10 +9,10 @@
   </div>
 </section>
 
-<% @startups.each do |startup| %>
-  <section id='content'>
-    <div class='container'>
-      <div class='row-fluid'>
+<section id='content'>
+  <div class='container'>
+    <div class='row-fluid'>
+      <% @startups.each do |startup| %>
         <div class='span6 startupcard'>
           <div class='startupcard-header'>
             <div class='startupimage'>
@@ -42,7 +42,8 @@
             <%= startup.product %>
           </div>
         </div>
-      </div>
+      <% end %>
     </div>
-  </section>
-<% end %>
+  </div>
+</section>
+
