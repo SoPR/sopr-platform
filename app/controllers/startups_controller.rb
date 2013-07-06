@@ -11,6 +11,7 @@ class StartupsController < ApplicationController
   # GET /startups/1
   # GET /startups/1.json
   def show
+    redirect_to startups_path
   end
 
   # GET /startups/new
@@ -30,8 +31,7 @@ class StartupsController < ApplicationController
 
     respond_to do |format|
       if @startup.save
-        format.html { redirect_to startups_path,
-          notice: 'Startup was successfully created.' }
+        format.html { redirect_to startups_path, notice: 'Startup was successfully created.' }
         format.json { render action: 'show', status: :created, location: @startup }
       else
         format.html { render action: 'new' }
@@ -45,7 +45,7 @@ class StartupsController < ApplicationController
   def update
     respond_to do |format|
       if @startup.update(startup_params)
-        format.html { redirect_to @startup, notice: 'Startup was successfully updated.' }
+        format.html { redirect_to startups_path, notice: 'Startup was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
