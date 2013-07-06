@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :max_length => 40 %>
   </div>
   <div>
     <%= f.label 'Logo' %>
@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :pitch %>
-    <%= f.text_field :pitch %>
+    <%= f.text_field :pitch, :max_length => 100 %>
   </div>
   <div class="field">
     <%= f.label :website %>

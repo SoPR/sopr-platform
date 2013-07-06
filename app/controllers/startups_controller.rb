@@ -28,8 +28,6 @@ class StartupsController < ApplicationController
     @startup = Startup.new(startup_params)
     @startup.user = current_user
 
-
-
     respond_to do |format|
       if @startup.save
         format.html { redirect_to startups_path,
