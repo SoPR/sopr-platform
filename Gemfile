@@ -55,3 +55,4 @@ gem 'pg', group: :production
 gem 'unicorn', group: :production
 
 gem "asset_sync"
+gem "excon", "~> 0.6.6"

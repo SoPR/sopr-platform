@@ -12,9 +12,9 @@ $radius: 3px;
   border-radius: $radius;
   display: inline-block;
   vertical-align: top;
-  -webkit-box-shadow: 0 1px 16px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 1px 16px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   .startupimage {
     border: 1px solid #ddd;
     background-color: #fff;

@@ -193,6 +193,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.0)
   devise (= 3.0.0.rc)
+  excon (~> 0.6.6)
   jbuilder (~> 1.2)
   jquery-rails
   pg

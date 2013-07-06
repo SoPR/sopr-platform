@@ -18,8 +18,8 @@
       <div class='span2 authentication'>
         <ul>
           <% if current_user %>
-          <li class="dropdown last">
-            <a class="dropdown-toggle nav-link" id="dLabel" data-toggle="dropdown" href="#" style='padding:10px 29px;'>
+          <li class="dropdown last" style='float:right;'>
+            <a class="dropdown-toggle nav-link" id="dLabel" data-toggle="dropdown" href="#" style='padding:10px 15px;'>
               <img class='user-image' src="<%= gravatar_for current_user %>">
             </a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
