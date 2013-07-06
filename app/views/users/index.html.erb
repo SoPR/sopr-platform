@@ -17,7 +17,7 @@
             <img class='user-image imagecard <%= user.role %>' src="<%= gravatar_for user %>">
           </div>
           <div class='userinfo'>
-            <h1><%= user.full_name %></h1>
+            <h1 title="<%= user.full_name %>"><%= user.full_name %></h1>
             <h3><%= user.role.titlecase %></h3>
           </div>
           <div class='userabout'>

@@ -63,6 +63,10 @@ $user-image-profile: 50%;
       text-align: center;
       line-height: 16px;
       margin: 20px 0 5px;
+      width: 180px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     h3 {
       font-size: 14px;
