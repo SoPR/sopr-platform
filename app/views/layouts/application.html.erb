@@ -4,7 +4,6 @@
   <title>Startups of Puerto Rico</title>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= favicon_link_tag 'favicon.ico' %>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 </head>
@@ -16,6 +15,7 @@
 
 <%= yield %>
 
+<%= javascript_include_tag "application" %>
 
 </body>
 </html>
