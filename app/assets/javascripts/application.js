@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require lodash.min
 //= require_tree .
 
 // = require bootstrap.min
