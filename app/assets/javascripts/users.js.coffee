@@ -1,20 +1,4 @@
-toggleTab = (targetClass) ->
-    $footer = $('div.profile-footer')
-    $nav = $footer.find('ul.nav')
-    $nav.find('.active').removeClass 'active'
-    $nav.find(".tab-#{targetClass}").addClass 'active'
-
-toggleTabPanel = (targetClass) ->
-    $('div.tab-pane.active').removeClass 'active'
-    $("div.tab-pane.#{targetClass}").addClass 'active'
-
-updateFormAction = (targetClass) ->
-    $('#edit_user').attr 'action', "/users##{targetClass}"
-
-updateLocationHash = (hash) ->
-    window.location.hash = hash
-
-$ ->
+initialize = () ->
     targetClass = window.location.hash.substr(1)
 
     unless targetClass
@@ -35,3 +19,26 @@ $ ->
         toggleTabPanel(targetClass)
         updateFormAction(targetClass)
         updateLocationHash(targetClass)
+
+toggleTab = (targetClass) ->
+    $footer = $('div.profile-footer')
+    $nav = $footer.find('ul.nav')
+    $nav.find('.active').removeClass 'active'
+    $nav.find(".tab-#{targetClass}").addClass 'active'
+
+toggleTabPanel = (targetClass) ->
+    $('div.tab-pane.active').removeClass 'active'
+    $("div.tab-pane.#{targetClass}").addClass 'active'
+
+updateFormAction = (targetClass) ->
+    $('#edit_user').attr 'action', "/users##{targetClass}"
+
+updateLocationHash = (hash) ->
+    window.location.hash = hash
+
+$ ->
+    $body = $('body')
+    routes = ['registrations-edit', 'registrations-update']
+
+    if _.some(routes, (route) -> $body.hasClass route)
+        initialize()
