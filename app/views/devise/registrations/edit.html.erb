@@ -19,9 +19,15 @@
               </div>
               <div class='profile-footer'>
                 <ul class="nav nav-pills">
-                  <li class="active"><a href="#account" data-toggle="tab">Account</a></li>
-                  <li><a href="#profile" data-toggle="tab">Profile</a></li>
-                  <li><a href="#social" data-toggle="tab">Social</a></li>
+                  <li class="tab-account active">
+                    <a href="#" data-target-class="account">Account</a>
+                  </li>
+                  <li class="tab-profile">
+                    <a href="#" data-target-class="profile">Profile</a>
+                  </li>
+                  <li class="tab-social">
+                    <a href="#" data-target-class="social">Social</a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -30,7 +36,7 @@
                 <h2>Startups Owned by Me</h2>
               </header>
               <div class='startup-list'>
-                <ul> 
+                <ul>
                   <% @user.startups.each do |startup| %>
                     <li>
                       <a href="#">
@@ -45,7 +51,7 @@
           </div>
           <div class='span7'>
             <div class="tab-content">
-              <div class="tab-pane active" id="account">
+              <div class="tab-pane active account">
                 <h2 class='section-name'>Account</h2>
                 <h4 class='section-sub-name'>Change your basic account.</h4>
                 <div>
@@ -69,7 +75,7 @@
                   <%= f.password_field :password_confirmation %>
                 </div>
               </div>
-              <div class="tab-pane" id="profile">
+              <div class="tab-pane profile">
                 <h2 class='section-name'>Profile</h2>
                 <h4 class='section-sub-name'>This information appears on your public profile and beyond.</h4>
                 <div>
@@ -85,7 +91,7 @@
                   <%= f.text_area :bio, :max_length => 120, :style => 'height:80px;' %>
                 </div>
               </div>
-              <div class="tab-pane" id="social">
+              <div class="tab-pane social">
                 <h2 class='section-name'>Social Profiles</h2>
                 <h4 class='section-sub-name'>Connect the links of your online portfolios.</h4>
                 <div>
@@ -126,7 +132,7 @@
             </div>
             <div><%= f.submit "Save", :class => 'button primary-button button-save', :style => 'width:120px;' %></div>
           </div>
-        <% end %> 
+        <% end %>
       </div>
     </div>
   </div>
