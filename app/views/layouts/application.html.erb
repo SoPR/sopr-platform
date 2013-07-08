@@ -11,7 +11,7 @@
 
 <%= render 'shared/header' %>
 
-<%= render 'shared/notifications' %>
+<%= render partial: "shared/flash_messages", flash: flash %>
 
 <%= yield %>
 
