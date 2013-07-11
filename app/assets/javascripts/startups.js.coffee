@@ -1,3 +1,17 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+initialize = () ->
+    $markets = $("#startup_markets")
+
+    $markets.tokenInput "http://api.angel.co/1/search?type=MarketTag",
+      crossDomain: true,
+      queryParam: "query",
+      prePopulate: $markets.data('pre'),
+      theme: "facebook",
+      tokenLimit: 3,
+      tokenValue: "name"
+
+$ ->
+    $body = $('body')
+    routes = ['startups-new', 'startups-edit']
+
+    if _.some(routes, (route) -> $body.hasClass route)
+        initialize()

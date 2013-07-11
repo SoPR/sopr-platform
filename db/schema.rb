@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130704212500) do
+ActiveRecord::Schema.define(version: 20130711132448) do
+
+  create_table "markets", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "markets_startups", id: false, force: true do |t|
+    t.integer "startup_id"
+    t.integer "market_id"
+  end
+
+  add_index "markets_startups", ["startup_id", "market_id"], name: "index_markets_startups_on_startup_id_and_market_id"
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
@@ -31,7 +44,6 @@ ActiveRecord::Schema.define(version: 20130704212500) do
     t.string   "pitch"
     t.string   "website"
     t.text     "product"
-    t.string   "markets"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
