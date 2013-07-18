@@ -12,40 +12,7 @@
     <div class='container'>
       <div class='row-fluid'>
         <% @users.each do |user| %>
-        <div class='span3 usercard'>
-          <div class='userimage'>
-            <img class='user-image imagecard <%= user.role %>' src="<%= gravatar_for user %>">
-          </div>
-          <div class='userinfo'>
-            <h1 title="<%= user.full_name %>"><%= user.full_name %></h1>
-            <h3><%= user.role.titlecase %></h3>
-          </div>
-          <div class='userabout'>
-            <p><%= user.bio %></p>
-          </div>
-          <div class='usersocial'>
-            <ul>
-              <% unless user.facebook_username.blank? %>
-              <li><a href="<%= facebook_url user %>"><i class='icon-facebook-1'></i></a></li>
-              <% end %>
-              <% unless user.twitter_username.blank? %>
-              <li><a href="<%= twitter_url user %>"><i class='icon-twitter-1'></i></a></li>
-              <% end %>
-              <% unless user.linkedin_username.blank? %>
-              <li><a href="<%= linkedin_url user %>"><i class='icon-linkedin-2'></i></a></li>
-              <% end %>
-              <% unless user.github_username.blank? %>
-              <li><a href="<%= github_url user %>"><i class='icon-github'></i></a></li>
-              <% end %>
-              <% unless user.flickr_username.blank? %>
-              <li><a href="<%= flickr_url user %>"><i class='icon-flickr'></i></a></li>
-              <% end %>
-              <% unless user.dribbble_username.blank? %>
-              <li><a href="<%= dribbble_url user %>"><i class='icon-dribbble-1'></i></a></li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
+          <%= render 'user_card', user: user %>
         <% end %>
       </div>
     </div>
