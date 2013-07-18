@@ -32,7 +32,7 @@
                     <% unless startup.website.blank? %> 
                       <li><a target='_blank' href="<%= startup.website %>"><i class='icon-globe-2'></i></a></li>
                     <% end %>
-                    <li class='markets'><%= startup.markets %></li>
+                    <% market_names_list(startup.markets) %>
                    </ul>
                 </div>
               </div>
