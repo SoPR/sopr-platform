@@ -1,0 +1,15 @@
+<div class='span3 usercard'>
+  <div class='userimage'>
+    <%= image_tag gravatar_for(user), class: "user-image imagecard #{user.role}" %>
+  </div>
+  <div class='userinfo'>
+    <%= content_tag(:h1, user.full_name, title: user.full_name) %>
+    <%= content_tag(:h3, user.role.titlecase) %>
+  </div>
+  <div class='userabout'>
+    <%= content_tag(:p, user.bio) %>
+  </div>
+  <div class='usersocial'>
+    <%= social_icon_links(user) %>
+  </div>
+</div>
