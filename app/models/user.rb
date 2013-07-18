@@ -12,9 +12,7 @@ class User < ActiveRecord::Base
   validates_length_of :bio, :maximum => 120
 
   def full_name
-    if first_name and last_name
-      [first_name, last_name].join(' ')
-    end
+    [first_name, last_name].join(' ') if first_name && last_name
   end
 
   def full_name=(name='')
@@ -24,14 +22,9 @@ class User < ActiveRecord::Base
   end
 
   def self.roles
-    user_roles = []
-    roles = ['developer', 'designer', 'hacker', 'entrepreneur', 'artist', 'business']
-
-    roles.each do |role|
-      user_roles.push([role.titlecase, role])
+    %w(developer designer hacker entrepreneur artist business).map do |role|
+      [role.titlecase, role]
     end
-
-    return user_roles
   end
 
   def self.find_first_by_auth_conditions(warden_conditions)
