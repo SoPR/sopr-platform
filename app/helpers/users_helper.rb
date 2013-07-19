@@ -1,8 +1,7 @@
 module UsersHelper
   def gravatar_for(user, options = { size: 140 })
-    gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
     size = options[:size]
-    "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
+    "http://gravatar.com/avatar/#{user.gravatar_user_hash}.png?s=#{size}"
   end
 
   def facebook_url(user)
