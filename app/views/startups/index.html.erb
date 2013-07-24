@@ -29,10 +29,10 @@
                 </div>
                 <div class='startuptags'>
                    <ul>
-                    <% unless startup.website.blank? %> 
+                    <% unless startup.website.blank? %>
                       <li><a target='_blank' href="<%= startup.website %>"><i class='icon-globe-2'></i></a></li>
                     <% end %>
-                    <% market_names_list(startup.markets) %>
+                    <% market_names_list(startup) %>
                    </ul>
                 </div>
               </div>

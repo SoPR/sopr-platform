@@ -1,5 +1,5 @@
 initialize = () ->
-    $markets = $("#startup_markets")
+    $markets = $("#startup_market_list")
 
     $markets.tokenInput "http://api.angel.co/1/search?type=MarketTag",
       crossDomain: true,

@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :markets %>
-    <%= f.text_field :markets, "data-pre" => @startup.markets.map(&:attributes).to_json %>
+    <%= f.text_field :market_list, "data-pre" => @startup.markets.map(&:attributes).to_json %>
   </div>
   <div class="actions">
     <%= f.submit %>

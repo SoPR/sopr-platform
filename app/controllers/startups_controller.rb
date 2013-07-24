@@ -79,6 +79,6 @@ class StartupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def startup_params
-      params.require(:startup).permit(:name, :pitch, :website, :product, :markets, :user_id, :image)
+      params.require(:startup).permit(:name, :pitch, :website, :product, :market_list, :user_id, :image)
     end
 end

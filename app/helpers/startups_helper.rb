@@ -1,10 +1,6 @@
 module StartupsHelper
-  def market_names(markets)
-    markets.map { |market| market.name }
-  end
-
-  def market_names_list(markets)
-    market_names(markets).each do |market|
+  def market_names_list(startup)
+    startup.market_list.each do |market|
       concat content_tag(:li, market, class: 'markets')
     end
   end

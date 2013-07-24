@@ -56,3 +56,5 @@ gem 'unicorn', group: :production
 
 gem "asset_sync"
 gem "excon", "~> 0.6.6"
+
+gem "acts-as-taggable-on", "~> 2.4.1"
