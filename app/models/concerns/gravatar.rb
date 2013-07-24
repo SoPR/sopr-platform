@@ -63,15 +63,25 @@ module Gravatar
   private
 
   def user_json
-    JSON.parse(open("http://en.gravatar.com/#{gravatar_user_hash}.json").read)
+    begin
+      entries = JSON.parse(open("http://en.gravatar.com/#{gravatar_user_hash}.json").read)
+    rescue Exception => e
+      entries = {}
+    end
+    entries
   end
 
   def info
-    user_json['entry'][0]
+    begin
+      user_entry = user_json['entry'][0]
+    rescue Exception => e
+      user_entry = {}
+    end
+    user_entry
   end
 
   def account_data
-    info['accounts']
+    info['accounts'] || []
   end
 
   def account_names
