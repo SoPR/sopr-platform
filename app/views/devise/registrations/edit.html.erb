@@ -90,6 +90,10 @@
                   <%= f.label :bio %>
                   <%= f.text_area :bio, :max_length => 120, :style => 'height:80px;' %>
                 </div>
+                <div>
+                  <%= f.check_box :available_for_hire, :style => "float:left;" %>
+                  <%= f.label :available_for_hire, "Available for hire?".html_safe, :style => "float:left; margin-left: 10px;" %>
+                </div>
               </div>
               <div class="tab-pane social">
                 <h2 class='section-name'>Social Profiles</h2>

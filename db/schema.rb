@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130724121010) do
+ActiveRecord::Schema.define(version: 20130726001919) do
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 20130724121010) do
     t.string   "role"
     t.text     "bio"
     t.string   "twitter_username"
+    t.boolean  "available_for_hire",     default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
