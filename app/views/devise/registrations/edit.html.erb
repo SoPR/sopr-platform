@@ -33,15 +33,16 @@
             </div>
             <div class='sidebar-section'>
               <header>
-                <h2>Startups Owned by Me</h2>
+                <%= content_tag(:h2, ('Startups Owned by Me' unless @user.startups.empty?)) %>
               </header>
               <div class='startup-list'>
                 <ul>
                   <% @user.startups.each do |startup| %>
                     <li>
-                      <a href="#">
-                        <%= image_tag(startup.image_url(:thumb), :class => "startuplogo") %><span class='truncate'><%= startup.name %></span>
-                        <i class='icon-eye'></i>
+                      <a href="<%= edit_startup_path(startup).html_safe %>">
+                        <%= image_tag(startup.image_url(:thumb), class: "startuplogo") %>
+                        <%= content_tag(:span, startup.name, class: 'truncate') %>
+                        <%= content_tag(:i, '', class: 'icon-eye') %>
                       </a>
                     </li>
                   <% end %>
