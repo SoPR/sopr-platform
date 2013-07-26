@@ -12,6 +12,7 @@ Ruby On Rails project for [CAP-003](https://github.com/SoPR/CAP/pull/3)
   - [CDN Asset Host](#cdn-asset-host)
   - [How to set environment keys](#how-to-set-environment-keys)
 * [Requirements](#requirements)
+* [Authors](#authors)
 * [Contributing](#contributing)
 * [License](#license)
 
@@ -110,6 +111,12 @@ Using **Heroku**:
   	* **Development**: sqlite3 (v.3.7.12+)
   	* **Production**: PostgreSQL
   * [RMagick](https://github.com/rmagick/rmagick)
+  
+## Authors
+* [José Padilla](https://www.github.com/jpadilla)
+* [Ryan Oliver](https://www.github.com/r23712)
+* [Jonah Ruiz](https://www.github.com/jonahoffline)
+* [Axel Rivera](https://www.github.com/riveralabs)
   
   
 ## Contributing
