@@ -1,7 +1,7 @@
 <div class='container'>
 
   <div class='row-fluid'>
-    <h1>Editing '<%= @startup.name %>' Startup</h1>
+    <%= content_tag(:h1, "Editing '#{@startup.name}' Startup") %>
 
     <%= render 'form' %>
 
