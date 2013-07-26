@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   attr_accessor :login
   validates_presence_of :username, :full_name
@@ -36,6 +36,17 @@ class User < ActiveRecord::Base
     else
       where(conditions).first
     end
+  end
+
+  def confirm!
+    welcome_message
+    super
+  end
+
+  private
+
+  def welcome_message
+    UserMailer.welcome_email(self).deliver
   end
 
 end
