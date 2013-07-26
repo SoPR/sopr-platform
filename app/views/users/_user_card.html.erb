@@ -5,6 +5,7 @@
   <div class='userinfo'>
     <%= content_tag(:h1, user.full_name, title: user.full_name) %>
     <%= content_tag(:h3, user.role.titlecase) %>
+    <%= content_tag(:p, "Available for Hire: #{user.available_for_hire ? 'Yes' : 'No' }") %>
   </div>
   <div class='userabout'>
     <%= content_tag(:p, user.bio) %>
