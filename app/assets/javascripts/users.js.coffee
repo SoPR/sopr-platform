@@ -1,25 +1,3 @@
-initialize = () ->
-    targetClass = window.location.hash.substr(1)
-
-    unless targetClass
-        targetClass = 'account'
-
-    toggleTab(targetClass)
-    toggleTabPanel(targetClass)
-    updateFormAction(targetClass)
-    updateLocationHash(targetClass)
-
-    $(".nav a").click (event) ->
-        event.preventDefault()
-        $this = $(event.currentTarget)
-        $parent = $this.parent()
-        targetClass = $this.data 'target-class'
-
-        toggleTab(targetClass)
-        toggleTabPanel(targetClass)
-        updateFormAction(targetClass)
-        updateLocationHash(targetClass)
-
 toggleTab = (targetClass) ->
     $footer = $('div.profile-footer')
     $nav = $footer.find('ul.nav')
@@ -38,7 +16,28 @@ updateLocationHash = (hash) ->
 
 $ ->
     $body = $('body')
-    routes = ['registrations-edit', 'registrations-update']
+    bodyClass = $body.attr 'class'
 
-    if _.some(routes, (route) -> $body.hasClass route)
-        initialize()
+    if bodyClass in ['registrations-edit', 'registrations-update']
+        targetClass = window.location.hash.substr(1)
+
+        unless targetClass
+            targetClass = 'account'
+
+        toggleTab(targetClass)
+        toggleTabPanel(targetClass)
+        updateFormAction(targetClass)
+        updateLocationHash(targetClass)
+
+        $(".nav a").click (event) ->
+            event.preventDefault()
+            $this = $(event.currentTarget)
+            $parent = $this.parent()
+            targetClass = $this.data 'target-class'
+
+            toggleTab(targetClass)
+            toggleTabPanel(targetClass)
+            updateFormAction(targetClass)
+            updateLocationHash(targetClass)
+    else if bodyClass is 'users-index'
+        $(".usercard").equalHeights()
