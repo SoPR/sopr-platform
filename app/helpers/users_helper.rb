@@ -36,6 +36,7 @@ module UsersHelper
       concat(content_tag(:li, github_icon_link(user))) if user.github_username?
       concat(content_tag(:li, flickr_icon_link(user))) if user.flickr_username?
       concat(content_tag(:li, dribbble_icon_link(user))) if user.dribbble_username?
+      concat(content_tag(:li, website_icon_link(user))) if user.website_url?
     end
   end
 
@@ -72,6 +73,12 @@ module UsersHelper
   def dribbble_icon_link(user)
     link_to dribbble_url(user) do
       content_tag(:i, '', class: 'icon-dribbble-1')
+    end
+  end
+
+  def website_icon_link(user)
+    link_to user.website_url do
+      content_tag(:i, '', class: 'icon-globe-2')
     end
   end
 end
