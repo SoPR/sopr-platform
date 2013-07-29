@@ -294,3 +294,20 @@ select {
 .flash-message {
   margin-top: 20px;
 }
+
+/* Authentication (Login, Signup, Reset Password and Resend Details Page) */
+
+#auth-wrapper {
+  padding: 70px 180px 0;
+}
+
+#auth-wrapper h2 {
+  font-size: 24.5px;
+  font-weight: 500;
+}
+
+#auth-wrapper h4 {
+  color: #6a7181;
+  font-weight: 300;
+  font-size: 15px;
+}
