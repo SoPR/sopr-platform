@@ -16,16 +16,7 @@ SoprPlatform::Application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
 
-  config.action_mailer.smtp_settings = {
-    :address              => ENV['SMTP_SERVER'],
-    :port                 => ENV['SMTP_SERVER_PORT'],
-    :domain               => ENV['EMAIL_DOMAIN_NAME'],
-    :authentication       => ENV['AUTH_TYPE'],
-    :user_name            => ENV['SMTP_USERNAME'],
-    :password             => ENV['SMTP_PASSWORD'],
-    :enable_starttls_auto => ENV['TLS_AUTO']
-  }
-
+  config.action_mailer.delivery_method = :letter_opener
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
