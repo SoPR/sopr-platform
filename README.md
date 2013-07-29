@@ -42,8 +42,8 @@ Now open your browser and head to:
 ## Configuration
     
 ### Environment Keys
-#### SMTP
-For the email notifications to work, you need to have the following defined:
+#### SMTP (Production Environment)
+For the email notifications to work in Production, you need to have the following defined:
     
     SMTP_SERVER
     SMTP_SERVER_PORT
@@ -62,6 +62,8 @@ For the email notifications to work, you need to have the following defined:
     SMTP_USERNAME="your_email@gmail.com"
 	SMTP_PASSWORD="your_password_here"
 	TLS_AUTO="true"
+
+**Note**: In *Development* mode, the [letter_opener](https://github.com/ryanb/letter_opener) is used to avoid the SMTP configuration. It will open any email (sent from the App) in the browser instead of actually sending it.
 	
 #### Cookies
 	
