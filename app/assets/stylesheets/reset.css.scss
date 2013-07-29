@@ -4209,8 +4209,8 @@ a.thumbnail:focus {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  background-color: #fcf8e3;
-  border: 1px solid #fbeed5;
+  background-color: white;
+  border: 1px solid #F1C40F;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -4247,12 +4247,12 @@ a.thumbnail:focus {
   color: #b94a48;
 }
 .alert-info {
-  background-color: #d9edf7;
-  border-color: #bce8f1;
-  color: #3a87ad;
+  border-color: #3498DB;
+  color: #2980B9;
+  background: white;
 }
 .alert-info h4 {
-  color: #3a87ad;
+  color: #f0ad4e;
 }
 .alert-block {
   padding-top: 14px;

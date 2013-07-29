@@ -79,12 +79,12 @@ SoprPlatform::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.action_mailer.smtp_settings = {
-    :address              => ENV['SMTP_SERVER'],
-    :port                 => ENV['SMTP_SERVER_PORT'],
-    :domain               => ENV['EMAIL_DOMAIN_NAME'],
-    :authentication       => ENV['AUTH_TYPE'],
-    :user_name            => ENV['SMTP_USERNAME'],
-    :password             => ENV['SMTP_PASSWORD'],
-    :enable_starttls_auto => ENV['TLS_AUTO']
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => "localhost:5000",
+    :authentication       => "plain",
+    :user_name            => "ryan.n.oliver@gmail.com",
+    :password             => "uprm23712",
+    :enable_starttls_auto => "true"
   }
 end

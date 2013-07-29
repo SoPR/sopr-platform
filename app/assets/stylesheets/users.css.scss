@@ -23,6 +23,55 @@ $user-image-profile: 50%;
   -webkit-box-shadow: $card-shadow;
   -moz-box-shadow: $card-shadow;
   box-shadow: $card-shadow;
+  .ribbon-wrapper {
+    position:relative;
+
+    .ribbon-wrapper-green {
+      width: 85px;
+      height: 88px;
+      overflow: hidden;
+      position: absolute;
+      top: -26px;
+      right: -24px;
+      p {
+        font-size:14px;
+        font-weight: 500;
+        color: #fff;
+        text-align: center;
+        -webkit-transform: rotate(45deg);
+        -moz-transform:    rotate(45deg);
+        -ms-transform:     rotate(45deg);
+        -o-transform:      rotate(45deg);
+        position: relative;
+        padding: 7px 0;
+        left: -5px;
+        top: 15px;
+        width: 120px;
+        background-color: #2ECC71; 
+        background-image: -webkit-linear-gradient(#2ECC71, #0acb5c); 
+        background-image:    -moz-linear-gradient(#2ECC71, #0acb5c); 
+        background-image:     -ms-linear-gradient(#2ECC71, #0acb5c); 
+        background-image:      -o-linear-gradient(#2ECC71, #0acb5c); 
+        -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+        -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+        box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+      }
+      p:before, p:after {
+        content: "";
+        border-top:   3px solid #6e8900;   
+        border-left:  3px solid transparent;
+        border-right: 3px solid transparent;
+        position:absolute;
+        bottom: -3px;
+      }
+      p:before {
+        left: 0;
+      }
+      p:after {
+        right: 0;
+      }
+    }
+  }
   .userimage {
     text-align: center;
     .imagecard {
@@ -65,8 +114,8 @@ $user-image-profile: 50%;
       font-weight: 400;
       text-align: center;
       line-height: 16px;
-      margin: 20px 0 5px;
-      width: 180px;
+      margin: 25px 0 5px;
+      width: 100%;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
