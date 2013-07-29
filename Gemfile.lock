@@ -27,6 +27,7 @@ GEM
       tzinfo (~> 0.3.37)
     acts-as-taggable-on (2.4.1)
       rails (>= 3, < 5)
+    addressable (2.3.5)
     arel (4.0.0)
     asset_sync (0.5.4)
       activemodel
@@ -86,6 +87,10 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kgio (2.8.0)
+    launchy (2.3.0)
+      addressable (~> 2.3)
+    letter_opener (1.1.2)
+      launchy (~> 2.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -199,6 +204,7 @@ DEPENDENCIES
   excon (~> 0.6.6)
   jbuilder (~> 1.2)
   jquery-rails
+  letter_opener
   pg
   rails (= 4.0.0)
   rails_12factor
