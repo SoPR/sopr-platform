@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    root_path
+    new_user? ? edit_user_registration_path(anchor: 'profile') : root_path
   end
 
   protected
@@ -14,5 +14,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) {
       |u| u.permit(:role, :full_name, :username, :email, :password) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit! }
+  end
+
+  def new_user?
+    current_user.sign_in_count.eql?(1)
   end
 end
