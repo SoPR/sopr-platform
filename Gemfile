@@ -35,7 +35,7 @@ gem 'rails_admin'
 gem 'carrierwave'
 gem 'rmagick'
 gem "asset_sync"
-gem "excon", "~> 0.6.6"
+gem "excon", "~> 0.25.3"
 gem "acts-as-taggable-on", "~> 2.4.1"
 gem 'friendly_id', '~> 5.0.0.alpha1', github: 'FriendlyId/friendly_id', branch: 'master'
 
