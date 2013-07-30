@@ -44,6 +44,12 @@ GEM
     bootstrap-sass (2.3.2.0)
       sass (~> 3.2)
     builder (3.1.4)
+    capybara (2.1.0)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -59,10 +65,16 @@ GEM
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
       warden (~> 1.2.1)
+    diff-lcs (1.2.4)
     erubis (2.7.0)
     excon (0.6.6)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
     fog (0.9.0)
       builder
       excon (~> 0.6.1)
@@ -159,6 +171,17 @@ GEM
       json (~> 1.4)
     remotipart (1.0.5)
     rmagick (2.13.2)
+    rspec-core (2.14.4)
+    rspec-expectations (2.14.0)
+      diff-lcs (>= 1.1.3, < 2.0)
+    rspec-mocks (2.14.1)
+    rspec-rails (2.14.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 2.14.0)
+      rspec-expectations (~> 2.14.0)
+      rspec-mocks (~> 2.14.0)
     ruby-hmac (0.4.0)
     safe_yaml (0.9.3)
     sass (3.2.9)
@@ -198,6 +221,8 @@ GEM
       raindrops (~> 0.7)
     warden (1.2.1)
       rack (>= 1.0)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -205,10 +230,12 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 2.4.1)
   asset_sync
+  capybara
   carrierwave
   coffee-rails (~> 4.0.0)
   devise (= 3.0.0.rc)
   excon (~> 0.6.6)
+  factory_girl_rails
   friendly_id (~> 5.0.0.alpha1)!
   jbuilder (~> 1.2)
   jquery-rails
@@ -218,6 +245,7 @@ DEPENDENCIES
   rails_12factor
   rails_admin
   rmagick
+  rspec-rails
   sass-rails (~> 4.0.0)
   sdoc
   sqlite3

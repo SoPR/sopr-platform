@@ -60,3 +60,12 @@ gem "excon", "~> 0.6.6"
 gem "acts-as-taggable-on", "~> 2.4.1"
 gem 'letter_opener', group: :development
 gem 'friendly_id', '~> 5.0.0.alpha1', github: 'FriendlyId/friendly_id', branch: 'master'
+
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'capybara'
+end
