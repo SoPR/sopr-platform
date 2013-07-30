@@ -1,9 +1,12 @@
 <div class='span4 usercard'>
-  <div class="ribbon-wrapper">
-       <div class="ribbon-wrapper-green">
-        <%= content_tag(:p, ('Hire Me' if user.available_for_hire)) %>
-      </div>
-  </div>
+  <% if user.available_for_hire %>
+    <%= content_tag(:div, '', class: 'ribbon-wrapper') do %>
+      <%= content_tag(:div, '', class: 'ribbon-wrapper-green') do %>
+        <%= content_tag(:p, 'Hire Me') %>
+      <% end %>
+    <% end %>
+  <% end  %>
+
   <div class='userimage'>
     <%= image_tag gravatar_for(user), class: "user-image imagecard #{user.role}" %>
   </div>
