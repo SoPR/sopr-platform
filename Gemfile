@@ -30,7 +30,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'devise', '3.0.0.rc'
+gem 'devise', '3.0.0'
 gem 'rails_admin'
 gem 'carrierwave'
 gem 'rmagick'
