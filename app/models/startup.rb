@@ -1,5 +1,9 @@
 class Startup < ActiveRecord::Base
   belongs_to :user
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   # Alias for acts_as_taggable_on :tags
   acts_as_ordered_taggable
   acts_as_ordered_taggable_on :markets

@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/FriendlyId/friendly_id.git
+  revision: cc5ce00077b168523a95b195d9911e5576e6489f
+  branch: master
+  specs:
+    friendly_id (5.0.0.alpha1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -202,6 +209,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise (= 3.0.0.rc)
   excon (~> 0.6.6)
+  friendly_id (~> 5.0.0.alpha1)!
   jbuilder (~> 1.2)
   jquery-rails
   letter_opener
