@@ -1,4 +1,4 @@
-# Startup of Puerto Rico
+# Startup of Puerto Rico [![Code Climate](https://codeclimate.com/github/jpadilla/sopr-platform.png)](https://codeclimate.com/github/jpadilla/sopr-platform)
 
 Ruby On Rails project for [CAP-003](https://github.com/SoPR/CAP/pull/3)
 
