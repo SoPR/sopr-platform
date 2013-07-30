@@ -59,4 +59,3 @@ gem "excon", "~> 0.6.6"
 
 gem "acts-as-taggable-on", "~> 2.4.1"
 gem 'letter_opener', group: :development
-gem 'mini-smtp-server', group: :development
