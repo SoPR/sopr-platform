@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: ENV['SMTP_USERNAME'] || 'sopr@example.com'
+  default from: ENV['DEFAULT_SENDER'] || 'sopr@example.com'
 
   def welcome_email(user)
     @user = user
