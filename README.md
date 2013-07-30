@@ -52,6 +52,7 @@ For the email notifications to work in Production, you need to have the followin
     SMTP_USERNAME
 	SMTP_PASSWORD
 	TLS_AUTO
+	DEFAULT_SENDER
 	
 ##### Sample SMTP Configuration using GMail
 
@@ -62,6 +63,7 @@ For the email notifications to work in Production, you need to have the followin
     SMTP_USERNAME="your_email@gmail.com"
 	SMTP_PASSWORD="your_password_here"
 	TLS_AUTO="true"
+	DEFAULT_SENDER="your_email@gmail.com"
 
 **Note**: In *Development* mode, the [letter_opener](https://github.com/ryanb/letter_opener) is used to avoid the SMTP configuration. It will open any email (sent from the App) in the browser instead of actually sending it.
 	
