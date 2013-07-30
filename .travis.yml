@@ -1,0 +1,7 @@
+language: ruby
+rvm:
+  - 2.0.0
+before_script:
+  - rake db:migrate
+  - rake db:test:prepare
+script: 'rake spec'
