@@ -39,6 +39,10 @@ Now open your browser and head to:
 
     http://localhost:3000
     
+To run the tests:
+
+	$ bin/rake spec
+    
 ## Configuration
     
 ### Environment Keys
