@@ -87,4 +87,6 @@ SoprPlatform::Application.configure do
     user_name: ENV["SMTP_USERNAME"],
     password: ENV["SMTP_PASSWORD"],
   }
+
+  config.action_mailer.default_url_options = { :host => 'sopr.herokuapp.com' }
 end
