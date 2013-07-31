@@ -2,9 +2,9 @@ class User < ActiveRecord::Base
   has_many :startups
 
   include Gravatar
+
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
+  # :token_authenticatable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
@@ -18,9 +18,7 @@ class User < ActiveRecord::Base
   end
 
   def full_name=(name='')
-    split = name.split(' ', 2)
-    self.first_name = split.first
-    self.last_name = split.last
+    self.first_name, self.last_name = name.split(' ', 2)
   end
 
   def self.roles
