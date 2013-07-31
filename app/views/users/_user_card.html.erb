@@ -7,8 +7,8 @@
     <% end %>
   <% end  %>
 
-  <div class='userimage'>
-    <%= image_tag gravatar_for(user), class: "user-image imagecard #{user.role}" %>
+  <div class="userimage <%= user.role %>">
+    <%= image_tag gravatar_for(user), class: "user-image imagecard" %>
   </div>
   <div class='userinfo'>
     <%= content_tag(:h1, user.full_name, title: user.full_name) %>

@@ -8,8 +8,8 @@
             <div class='account-card'>
               <div class='user-info'>
                 <div class='avatar'>
-                  <div class='profile-image'>
-                    <img class='image-card <%= current_user.role %>' src="<%= gravatar_for current_user %>">
+                  <div class="profile-image <%= current_user.role %>">
+                    <img class='image-card' src="<%= gravatar_for current_user %>">
                   </div>
                 </div>
                 <div class='member-info'>

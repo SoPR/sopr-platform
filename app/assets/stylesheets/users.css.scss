@@ -44,18 +44,18 @@ $user-image-profile: 50%;
         left: -5px;
         top: 15px;
         width: 120px;
-        background-color: #2ECC71; 
-        background-image: -webkit-linear-gradient(#2ECC71, #0acb5c); 
-        background-image:    -moz-linear-gradient(#2ECC71, #0acb5c); 
-        background-image:     -ms-linear-gradient(#2ECC71, #0acb5c); 
-        background-image:      -o-linear-gradient(#2ECC71, #0acb5c); 
+        background-color: #2ECC71;
+        background-image: -webkit-linear-gradient(#2ECC71, #0acb5c);
+        background-image:    -moz-linear-gradient(#2ECC71, #0acb5c);
+        background-image:     -ms-linear-gradient(#2ECC71, #0acb5c);
+        background-image:      -o-linear-gradient(#2ECC71, #0acb5c);
         -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
         -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
         box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
       }
       p:before, p:after {
         content: "";
-        border-top:   3px solid #6e8900;   
+        border-top:   3px solid #6e8900;
         border-left:  3px solid transparent;
         border-right: 3px solid transparent;
         position:absolute;
@@ -71,41 +71,50 @@ $user-image-profile: 50%;
   }
   .userimage {
     text-align: center;
+    width: 115px;
+    height: 115px;
+    margin: 0 auto;
+    padding: 12px;
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0 0 3px rgba(0,0,0,0.25);
+    box-shadow: 0 0 3px rgba(0,0,0,0.25);
+    -webkit-border-radius: $user-image-profile;
+    -moz-border-radius: $user-image-profile;
+    -ms-border-radius: $user-image-profile;
+    -o-border-radius: $user-image-profile;
+    border-radius: $user-image-profile;
+
+    &.developer {
+        background: #2995c4;
+    }
+
+    &.designer {
+        background: #6bab74;
+    }
+
+    &.hacker {
+        background: #da1c29;
+    }
+
+    &.entrepreneur {
+        background: #fcb452;
+    }
+
+    &.artist {
+        background: #be67de;
+    }
+
+    &.business {
+        background: #000000;
+    }
+
     .imagecard {
         width: 115px;
-        border: 12px solid #FFFFFF;
-        -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.25);
-        -moz-box-shadow: 0 0 3px rgba(0,0,0,0.25);
-        box-shadow: 0 0 3px rgba(0,0,0,0.25);
         -webkit-border-radius: $user-image-profile;
         -moz-border-radius: $user-image-profile;
         -ms-border-radius: $user-image-profile;
         -o-border-radius: $user-image-profile;
         border-radius: $user-image-profile;
-
-        &.developer {
-            border-color: #2995c4;
-        }
-
-        &.designer {
-            border-color: #6bab74;
-        }
-
-        &.hacker {
-            border-color: #da1c29;
-        }
-
-        &.entrepreneur {
-            border-color: #fcb452;
-        }
-
-        &.artist {
-            border-color: #be67de;
-        }
-
-        &.business {
-            border-color: #000000;
-        }
     }
   }
   .userinfo, .userabout {
@@ -178,40 +187,44 @@ $user-image-profile: 50%;
         width: 92px;
         padding: 10px;
         margin: 0;
+        -webkit-border-radius: $user-image-profile;
+        -moz-border-radius: $user-image-profile;
+        -ms-border-radius: $user-image-profile;
+        -o-border-radius: $user-image-profile;
+        border-radius: $user-image-profile;
+
+          &.developer {
+              background: #2995c4;
+          }
+
+          &.designer {
+              background: #6bab74;
+          }
+
+          &.hacker {
+              background: #da1c29;
+          }
+
+          &.entrepreneur {
+              background: #fcb452;
+          }
+
+          &.artist {
+              background: #be67de;
+          }
+
+          &.business {
+              background: #000000;
+          }
+
           .image-card {
             height: 92px;
             width: 92px;
-            border: 4px solid #FFFFFF;
             -webkit-border-radius: $user-image-profile;
             -moz-border-radius: $user-image-profile;
             -ms-border-radius: $user-image-profile;
             -o-border-radius: $user-image-profile;
             border-radius: $user-image-profile;
-
-            &.developer {
-                border-color: #2995c4;
-            }
-
-            &.designer {
-                border-color: #6bab74;
-            }
-
-            &.hacker {
-                border-color: #da1c29;
-            }
-
-            &.entrepreneur {
-                border-color: #fcb452;
-            }
-
-            &.artist {
-                border-color: #be67de;
-            }
-
-            &.business {
-                border-color: #000000;
-            }
-
         }
       }
     }
