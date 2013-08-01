@@ -314,3 +314,21 @@ select {
   font-weight: 300;
   font-size: 15px;
 }
+
+.coming-soon {
+  p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .lead {
+    font-size: 21px;
+    line-height: 30px;
+  }
+  a {
+    color: #08c;
+    &:hover {
+      color: #005580;
+      text-decoration: underline;
+    }
+  }
+}
