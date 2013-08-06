@@ -19,7 +19,7 @@
         <ul>
           <% if current_user %>
           <li class="dropdown last" style='float:right;'>
-            <a class="dropdown-toggle nav-link" id="dLabel" data-toggle="dropdown" href="#" style='padding:10px 15px;'>
+            <a class="dropdown-toggle nav-link" id="dLabel" data-toggle="dropdown" href="#" style='padding:10px 15px;margin: 4px 0;'>
               <img class='user-image' src="<%= gravatar_for current_user %>">
             </a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
@@ -43,7 +43,7 @@
           </li>
           <% else %>
           <li class="last">
-            <%= link_to "Sign in", new_user_session_path, class: 'nav-link' %>
+            <%= link_to "Sign in", new_user_session_path, class: 'nav-link main-btn' %>
           </li>
           <% end %>
         </ul>

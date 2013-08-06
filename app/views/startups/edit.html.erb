@@ -1,11 +1,7 @@
 <div class='container'>
-
   <div class='row-fluid'>
     <%= content_tag(:h1, "Editing '#{@startup.name}' Startup") %>
-
     <%= render 'form' %>
-
     <%= link_to 'Delete', @startup, :method => :delete, :confirm => "Are you sure you want to delete #{@startup.name}?" %>
-
   </div>
 </div>

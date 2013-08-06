@@ -1,3 +1,5 @@
+<h2 class='forms-section-title'>Company info</h2>
+
 <%= form_for @startup, :html => {:multipart => true} do |f| %>
   <% if @startup.errors.any? %>
     <div id="error_explanation">
@@ -11,29 +13,75 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name, :max_length => 40 %>
+  <div class='form-content'>
+    <div class='span3'>
+      <h3 class='form-label'><%= f.label 'Company Name' %></h3>
+    </div>
+    <div class='span5' style='margin-top: 10px;'>
+      <%= f.text_field :name, :maxlength => 40 %>
+    </div>
+    <div class='span4'>
+      <p class='form-input-message'></p>
+    </div>
   </div>
-  <div>
-    <%= f.label 'Logo' %>
-    <%= f.file_field :image %>
+  <div class='form-content'>
+    <div class='span3'>
+      <h3 class='form-label'><%= f.label 'Company Logo' %></h3>
+    </div>
+    <div class='span5' style='margin-top: 10px;'>
+      <div><%= f.file_field :image, :class => 'form-file' %></div>
+    </div>
+    <div class='span4'>
+      <p class='form-input-message'></p>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :pitch %>
-    <%= f.text_field :pitch, :max_length => 100 %>
+  <div class='form-content'>
+    <div class='span3'>
+      <h3 class='form-label'><%= f.label :pitch %></h3>
+    </div>
+    <div class='span5' style='margin-top: 10px;'>
+      <%= f.text_field :pitch, :maxlength => 40 %>
+    </div>
+    <div class='span4'>
+      <p class='form-input-message' style='margin-top:4px;'>
+        Describe your product in 3-5 words. Consider comparing your product with something that people are already familiar with.
+      </p>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :website %>
-    <%= f.url_field :website %>
+  <div class='form-content'>
+    <div class='span3'>
+      <h3 class='form-label'><%= f.label :website %></h3>
+    </div>
+    <div class='span5' style='margin-top: 10px;'>
+      <%= f.url_field :website %>
+    </div>
+    <div class='span4'>
+      <p class='form-input-message'></p>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :product %>
-    <%= f.text_area :product %>
+  <div class='form-content'>
+    <div class='span3'>
+      <h3 class='form-label'><%= f.label :product %></h3>
+    </div>
+    <div class='span5' style='margin-top: 10px;'>
+      <%= f.text_area :product, :maxlength => 500, :class => 'textarea-form' %>
+    </div>
+    <div class='span4'>
+      <p class='form-input-message' style='margin-top:12px;'>
+        What is the product? What does it help the customer do? Who is the customer?
+      </p>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :markets %>
-    <%= f.text_field :market_list, "data-pre" => @startup.markets.map(&:attributes).to_json %>
+  <div class='form-content'>
+    <div class='span3'>
+      <h3 class='form-label' style='margin: 30px 0;'><%= f.label :markets %></h3>
+    </div>
+    <div class='span5' style='margin-top: 10px;'>
+      <%= f.text_field :market_list, "data-pre" => @startup.markets.map(&:attributes).to_json, :class => 'markets-input' %>
+    </div>
+    <div class='span4'>
+      <p class='form-input-message' style='margin-top:28px;'>Add up to 4 markets - specifics markets are the best.</p>
+    </div>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,9 +1,12 @@
 <div class='container'>
 
   <div class='row-fluid'>
+
     <h2>Sign up</h2>
 
-    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+
+    <%= form_for('registrations', :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+
       <%= devise_error_messages! %>
 
       <div>
@@ -32,9 +35,10 @@
       </div>
 
       <div><%= f.submit "Sign up" %></div>
-    <% end %>
 
-    <%= render "devise/shared/links" %>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
 
   </div>
 

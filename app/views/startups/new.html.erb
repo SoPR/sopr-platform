@@ -1,17 +1,19 @@
-<div class='container'>
-
-  <div class='row-fluid'>
-
-    <div class='auth-wrapper'>
-
-      <h2>Create a new startup</h2>
-
-      <%= render 'form' %>
-
-      <%= link_to 'Back', startups_path %>
-
+<% content_for :subheader do %>
+<section id="subheader">
+  <div class="container">
+    <div class='row-fluid'>
+      <div class='span12'>
+        <h1 class='subheader-form-title'>Create a new startup</h1>
+      </div>
     </div>
-
   </div>
-
+</section>
+<% end %>
+<div class='container'>
+  <div class='row-fluid'>
+    <div id='content'>
+      <%= render 'form' %>
+      <%= link_to 'Back', startups_path %>
+    </div>
+  </div>
 </div>

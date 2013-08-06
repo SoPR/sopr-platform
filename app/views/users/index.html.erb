@@ -1,19 +1,20 @@
+<% content_for :subheader do %>
 <section id="subheader">
   <div class="container">
     <div class='row-fluid'>
       <div class='span12'>
-        <h1>People</h1>
-        <h2>A collection of creative talent from P.R.</h2>
+        <h1 class='subheader-title'>People a collection of creative talent from P.R.</h1>
       </div>
     </div>
   </div>
 </section>
-  <section id='content'>
-    <div class='container'>
-      <div class='row-fluid'>
-        <% @users.each do |user| %>
-          <%= render 'user_card', user: user %>
-        <% end %>
-      </div>
+<% end %>
+<section class='container'>
+  <div class='row-fluid'>
+    <div id='content'>
+      <% @users.each do |user| %>
+        <%= render 'user_card', user: user %>
+      <% end %>
     </div>
-  </section>
+  </div>
+</section>
