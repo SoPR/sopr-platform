@@ -45,7 +45,7 @@ class StartupsController < ApplicationController
   def update
     respond_to do |format|
       if @startup.update(startup_params)
-        format.html { redirect_to startups_path, notice: 'Startup was successfully updated.' }
+        format.html { redirect_to edit_startup_path(@startup), notice: 'Startup was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
