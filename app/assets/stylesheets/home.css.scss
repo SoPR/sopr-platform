@@ -1,6 +1,6 @@
 .sopr-home {
   position: relative;
-  background: #2a2a2a image-url('sopr-home.png');
+  background: #333 image-url('sopr-home.png');
   color: white;
   height: 497px;
   .marketing-section-signup {
@@ -68,13 +68,13 @@
         width: 100px;
         height: 100px;
         margin: 0 auto 15px;
-        color: #4183c4;
+        background: #f4f4f4;
         text-align: center;
         border: 1px solid #eee;
         border-radius: 50px;
         .featured-icon {
           width: 38px;
-          opacity: .85;
+          opacity: .8;
           position: relative;
           margin: 32px 0;
         }
