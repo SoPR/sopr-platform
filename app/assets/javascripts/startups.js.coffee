@@ -10,10 +10,19 @@ $ ->
           event.preventDefault()
           $('#startup_image').click()
 
+        $('#startup_image').change (event) ->
+          if @files && @files[0]
+              reader = new FileReader()
+
+              reader.onload = (e) ->
+                $('img.startuplogo').attr('src', e.target.result)
+
+              reader.readAsDataURL(@files[0])
+
         $('.reset-photo').click (event) ->
           event.preventDefault()
           # TODO: Set a flag to delete image
-          $('form.edit_startup').submit()
+          $('form').submit()
 
         $markets.tokenInput "http://api.angel.co/1/search?type=MarketTag",
           crossDomain: true,
