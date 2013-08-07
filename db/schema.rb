@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130730084558) do
+ActiveRecord::Schema.define(version: 20130807134758) do
+
+  create_table "activities", force: true do |t|
+    t.integer  "trackable_id"
+    t.string   "trackable_type"
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.string   "key"
+    t.text     "parameters"
+    t.integer  "recipient_id"
+    t.string   "recipient_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"

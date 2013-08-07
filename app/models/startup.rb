@@ -19,4 +19,9 @@ class Startup < ActiveRecord::Base
   def set_default_logo
     self.remove_image! if self.default_logo && self.default_logo == 'set_default'
   end
+
+  # Public Activity
+  include PublicActivity::Model
+  tracked owner: Proc.new{ |controller, model| controller.current_user }
+
 end

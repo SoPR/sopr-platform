@@ -47,4 +47,8 @@ class User < ActiveRecord::Base
     UserMailer.welcome_email(self).deliver
   end
 
+  # Public Activity
+  include PublicActivity::Model
+  tracked owner: Proc.new{ |controller, model| controller.current_user }
+
 end
