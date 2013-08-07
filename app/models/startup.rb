@@ -1,4 +1,5 @@
 class Startup < ActiveRecord::Base
+  attr_accessor :default_logo
   belongs_to :user
 
   extend FriendlyId
@@ -9,8 +10,13 @@ class Startup < ActiveRecord::Base
   acts_as_ordered_taggable_on :markets
   mount_uploader :image, ImageUploader
 
+  before_save :set_default_logo
+
   validates_presence_of :name, :pitch
   validates_length_of :name, :maximum => 40
   validates_length_of :pitch, :maximum => 100
 
+  def set_default_logo
+    self.remove_image! if self.default_logo && self.default_logo == 'set_default'
+  end
 end
