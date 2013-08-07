@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe User do
+  PublicActivity.enabled = false
   let(:new_user) { FactoryGirl.create(:user) }
 
   context 'Validation' do
