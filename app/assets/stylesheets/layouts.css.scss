@@ -466,7 +466,10 @@ select {
   text-align:center;
   a {
     padding-left: 10px;
-    color: #E74C3C;
+      &.action-delete {
+        color: #E74C3C;
+        margin-top: 12px;
+      }
   }
 }
 

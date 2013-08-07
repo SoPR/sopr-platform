@@ -1,7 +1,18 @@
+<% content_for :subheader do %>
+<section id="subheader">
+  <div class="container">
+    <div class='row-fluid'>
+      <div class='span12'>
+        <h1 class='subheader-form-title'>Edit startup: <%= @startup.name %></h1>
+      </div>
+    </div>
+  </div>
+</section>
+<% end %>
 <div class='container'>
   <div class='row-fluid'>
-    <%= content_tag(:h1, "Editing '#{@startup.name}' Startup") %>
-    <%= render 'form' %>
-    <%= link_to 'Delete', @startup, :method => :delete, :confirm => "Are you sure you want to delete #{@startup.name}?" %>
+    <div id='content'>
+      <%= render 'form' %>
+    </div>
   </div>
 </div>

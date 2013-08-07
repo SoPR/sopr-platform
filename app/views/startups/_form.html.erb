@@ -86,5 +86,9 @@
   <div class='form-content-action'>
     <%= f.submit 'Create Startup', :class => 'main-btn blue-btn btn-large' %>
     <%= link_to 'Cancel', startups_path %>
+
+    <% unless @startup.new_record? %>
+      <%= link_to 'Delete your startup', @startup, :method => :delete, :confirm => "Are you sure you want to delete #{@startup.name}?", :class => 'action-delete pull-right' %>
+    <% end %>
   </div>
 <% end %>
