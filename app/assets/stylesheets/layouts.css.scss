@@ -106,6 +106,7 @@
 }
 
 .authentication ul .first .nav-link, .authentication ul .last .nav-link {
+  float: left;
   display: block;
   padding: 9px 17px;
   margin-top: 0px;
@@ -140,13 +141,96 @@
   margin: 0 20px;
 }
 
+/* Login Card */
+
+.login-wrapper {
+  width: 350px;
+  margin: 60px auto;
+  form {
+    margin: 0 0 10px;
+  }
+}
+
+.login-wrapper-title {
+  position: relative;
+  padding: 10px 20px;
+  margin: 0;
+  color: #333;
+  text-shadow: 0 -1px 0 rgba(255,255,255,0.5);
+  background-color: #f5f6f7;
+  background-repeat: repeat-x;
+  border: 1px solid #eee;
+  border-radius: 3px 3px 0 0;
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+  }
+}
+
+.login-form-wrapper {
+  padding: 20px;
+}
+
+.form-label-login {
+  font-size: 13px;
+}
+
+.remenber-me-input {
+  float: left;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.remenber-me {
+  font-size: 12px;
+}
+
+.form-login-action {
+  margin: 25px 0 0;
+}
+
+.shared-links-wrapper {
+  background: #f5f6f7;
+  padding: 10px 20px;
+  margin: 20px 0 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  a {
+    text-align: left;
+    width: 100%;
+    float: left;
+    line-height: 1.1;
+    font-size: 13px;
+  }
+}
+
+/* Global Information Card */
+
+.info-cards {
+  background: white;
+  border: 1px solid #dddddd;
+  padding: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
 /* App Buttons */
 
 .main-btn {
   position: relative;
   display: inline-block;
   padding: 7px 15px;
-  font-size: 14px;
   font-weight: bold;
   color: #141823;
   text-shadow: 0 1px 0 rgba(255,255,255,0.9);
@@ -190,12 +274,22 @@
   color:white;
 }
 
+.btn-small {
+  padding: 4px 12px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
 .btn-medium {
-  padding: 11px;
+  padding: 8px 16px;
+  line-height: 1.428571429;
+  font-size: 14px;
 }
 
 .btn-large {
   padding: 12px 20px;
+  font-size: 18px;
+  line-height: 1.33;
 }
 
 
@@ -262,35 +356,14 @@
   padding-right: 13px;
 }
 
+/* Global Content Wrapper */
+
 #content {
   float: left;
   width: 100%;
   margin: 20px 0 40px;
 }
 
-textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"],
-input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"],
-input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-  background-color: white;
-  -webkit-box-shadow: inset 0 1px 5px rgba(0,0,0,0.1);
-  -moz-box-shadow: inset 0 1px 5px rgba(0,0,0,0.1);
-  box-shadow: inset 0 1px 5px rgba(0,0,0,0.1);
-  border: 1px solid #d6d9dd;
-  font-size: 14px;
-  letter-spacing: 1px;
-  font-weight: 300;
-  width: 291px;
-  margin-bottom: 0;
-  padding-left: 10px;
-  height: 27px;
-  line-height: 27px;
-  margin: 5px 0 20px;
-}
 
 select {
   margin: 5px 0 20px;
@@ -345,22 +418,7 @@ select {
   margin-top: 20px;
 }
 
-/* Authentication (Login, Signup, Reset Password and Resend Details Page) */
-
-#auth-wrapper {
-  padding: 70px 180px 0;
-}
-
-#auth-wrapper h2 {
-  font-size: 24.5px;
-  font-weight: 500;
-}
-
-#auth-wrapper h4 {
-  color: #6a7181;
-  font-weight: 300;
-  font-size: 15px;
-}
+/* Comming Soon Section Global Style */
 
 .coming-soon {
   p {
@@ -381,6 +439,30 @@ select {
 }
 
 /* Global Forms Style */
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"],
+input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"],
+input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  background-color: white;
+  -webkit-box-shadow: inset 0 1px 5px rgba(0,0,0,0.1);
+  -moz-box-shadow: inset 0 1px 5px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 5px rgba(0,0,0,0.1);
+  border: 1px solid #d6d9dd;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  width: 291px;
+  margin-bottom: 0;
+  padding-left: 10px;
+  height: 27px;
+  line-height: 27px;
+  margin: 5px 0 20px;
+}
 
 .forms-section-title {
   margin: 0px 0 25px 0;
