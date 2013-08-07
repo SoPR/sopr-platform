@@ -10,6 +10,11 @@ $ ->
           event.preventDefault()
           $('#startup_image').click()
 
+        $('.reset-photo').click (event) ->
+          event.preventDefault()
+          # TODO: Set a flag to delete image
+          $('form.edit_startup').submit()
+
         $markets.tokenInput "http://api.angel.co/1/search?type=MarketTag",
           crossDomain: true,
           queryParam: "query",
