@@ -1,0 +1,15 @@
+<section id='content'>
+  <div class='container'>
+    <div class='row-fluid'>
+      <div class="span12">
+        <h1>User Activity</h1>
+        <% @activities.each do |activity| %>
+          <div class="activity">
+           <% link_to activity.owner.full_name, activity.owner.full_name if activity.owner %>
+           <%= render_activity activity %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
