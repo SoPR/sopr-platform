@@ -441,6 +441,18 @@ select {
   }
 }
 
+.form-content-action {
+  float: left;
+  width: 960px;
+  padding: 10px 0 0;
+  margin: 30px 0;
+  text-align:center;
+  a {
+    padding-left: 10px;
+    color: #E74C3C;
+  }
+}
+
 /* Global forms erros messages  */
 
 #error_explanation {

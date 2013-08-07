@@ -43,7 +43,7 @@
       <%= f.text_field :pitch, :maxlength => 40 %>
     </div>
     <div class='span4'>
-      <p class='form-input-message' style='margin-top:4px;'>
+      <p class='form-input-message' style='margin-top:3px;'>
         Describe your product in 3-5 words. Consider comparing your product with something that people are already familiar with.
       </p>
     </div>
@@ -80,10 +80,11 @@
       <%= f.text_field :market_list, "data-pre" => @startup.markets.map(&:attributes).to_json, :class => 'markets-input' %>
     </div>
     <div class='span4'>
-      <p class='form-input-message' style='margin-top:28px;'>Add up to 4 markets - specifics markets are the best.</p>
+      <p class='form-input-message' style='margin-top:25px;'>Add up to 4 markets - specifics markets are the best.</p>
     </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class='form-content-action'>
+    <%= f.submit 'Create Startup', :class => 'main-btn' %>
+    <%= link_to 'Cancel', startups_path %>
   </div>
 <% end %>
