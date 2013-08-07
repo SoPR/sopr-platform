@@ -1,45 +1,48 @@
-<div class='container'>
-
-  <div class='row-fluid'>
-
-    <h2>Sign up</h2>
-
-
-    <%= form_for('registrations', :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-
-      <%= devise_error_messages! %>
-
-      <div>
-        <%= f.label :role %>
-        <%= f.select :role, User.roles, :prompt => true %>
+<% content_for :subheader do %>
+<section id="subheader">
+  <div class="container">
+    <div class='row-fluid'>
+      <div class='span12'>
+        <h1 class='subheader-form-title'>Sign up for Startup of Puerto Rico</h1>
       </div>
-
-      <div>
-        <%= f.label :full_name %>
-        <%= f.text_field :full_name %>
-      </div>
-
-      <div>
-        <%= f.label :username %>
-        <%= f.text_field :username %>
-      </div>
-
-      <div>
-        <%= f.label :email %>
-        <%= f.email_field :email %>
-      </div>
-
-      <div>
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-      </div>
-
-      <div><%= f.submit "Sign up" %></div>
-
-  <% end %>
-
-  <%= render "devise/shared/links" %>
-
+    </div>
   </div>
-
+</section>
+<% end %>
+<div id='content'>
+  <div class='container'>
+    <div class='row-fluid'>
+      <div class='span6'>
+        <h2 class='forms-section-title'>Create your personal account</h2>
+        <%= form_for('registrations', :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+          <div>
+            <%= f.label :role %>
+            <%= f.select :role, User.roles, :prompt => true %>
+          </div>
+          <div>
+            <%= f.label :full_name %>
+            <%= f.text_field :full_name %>
+          </div>
+          <div>
+            <%= f.label :username %>
+            <%= f.text_field :username %>
+          </div>
+          <div>
+            <%= f.label :email %>
+            <%= f.email_field :email %>
+          </div>
+          <div>
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+          </div>
+          <div><%= f.submit "Sign up" %></div>
+        <% end %>
+        <%= render "devise/shared/links" %>
+      </div>
+      <div class='span6'>
+        
+      </div>
+    </div>
+  </div>
 </div>
