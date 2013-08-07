@@ -29,7 +29,14 @@
       <h3 class='form-label'><%= f.label 'Company Logo' %></h3>
     </div>
     <div class='span5' style='margin-top: 10px;'>
-      <div><%= f.file_field :image, :class => 'form-file' %></div>
+      <div class="logo-input-wrapper">
+        <a href="#" class="btn upload-photo">Choose a logo</a>
+        <a href="#" class="btn reset-photo">Reset to default</a>
+        <div class="logo-wrapper">
+          <%= image_tag(@startup.image_url(:thumb), :class => "startuplogo") %>
+        </div>
+        <%= f.file_field :image, :class => 'form-photo' %>
+      </div>
     </div>
     <div class='span4'>
       <p class='form-input-message'></p>
