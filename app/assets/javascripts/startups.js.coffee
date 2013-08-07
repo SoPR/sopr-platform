@@ -21,8 +21,8 @@ $ ->
 
         $('.reset-photo').click (event) ->
           event.preventDefault()
-          # TODO: Set a flag to delete image
-          $('form').submit()
+          $('input#startup_default_logo').val('set_default')
+          $('img.startuplogo').attr('src', '/assets/fallback/thumb_startup-default.png')
 
         $markets.tokenInput "http://api.angel.co/1/search?type=MarketTag",
           crossDomain: true,
