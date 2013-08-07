@@ -34,6 +34,7 @@
         <a href="#" class="btn reset-photo">Reset to default</a>
         <div class="logo-wrapper">
           <%= image_tag(@startup.image_url(:thumb), :class => "startuplogo") %>
+          <%= f.hidden_field :default_logo %>
         </div>
         <%= f.file_field :image, :class => 'form-photo' %>
       </div>
@@ -91,11 +92,11 @@
     </div>
   </div>
   <div class='form-content-action'>
-    <%= f.submit 'Create Startup', :class => 'main-btn blue-btn btn-large' %>
+    <%= f.submit (@startup.id? ? 'Update Startup' : 'Create Startup'), :class => 'main-btn blue-btn btn-large' %>
     <%= link_to 'Cancel', startups_path %>
 
     <% unless @startup.new_record? %>
-      <%= link_to 'Delete your startup', @startup, :method => :delete, :confirm => "Are you sure you want to delete #{@startup.name}?", :class => 'action-delete pull-right' %>
+      <%= link_to 'Delete your startup', @startup, method: :delete, data: { confirm: "Are you sure you want to delete #{@startup.name}?" }, class: 'action-delete pull-right' %>
     <% end %>
   </div>
 <% end %>
