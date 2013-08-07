@@ -112,3 +112,44 @@ $radius: 3px;
     font-weight: 400;
   }
 }
+
+.form-content {
+  .logo-wrapper {
+    display: inline-block;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    margin-right: 5px;
+    height: 90px;
+    width: 90px;
+    padding: 5px;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+
+    .startuplogo {
+      width:90px;
+      height:90px;
+      vertical-align: middle;
+      -webkit-border-radius: $radius;
+      -moz-border-radius: $radius;
+      border-radius: $radius;
+    }
+  }
+  .logo-input-wrapper {
+    margin-bottom: 20px;
+    .form-file {
+      display: none;
+    }
+    .upload-photo, .reset-photo {
+      position: absolute;
+      width: 120px;
+      padding: 8px;
+    }
+    .upload-photo {
+      margin: 6px 0 0 110px;
+    }
+    .reset-photo {
+      margin: 60px 0 0 110px;
+    }
+  }
+}

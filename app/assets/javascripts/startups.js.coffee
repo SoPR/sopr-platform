@@ -6,6 +6,10 @@ $ ->
     if bodyClass in ['startups-new', 'startups-edit']
         $markets = $("#startup_market_list")
 
+        $('.upload-photo').click (event) ->
+          event.preventDefault()
+          $('#startup_image').click()
+
         $markets.tokenInput "http://api.angel.co/1/search?type=MarketTag",
           crossDomain: true,
           queryParam: "query",
