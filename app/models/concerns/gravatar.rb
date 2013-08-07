@@ -1,4 +1,4 @@
-module Gravatar
+module Concerns::Gravatar
   # Provides methods for social data added through Gravatar's Verified Services
   extend ActiveSupport::Concern
 
