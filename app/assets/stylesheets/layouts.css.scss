@@ -393,7 +393,7 @@ select {
 .form-label {
   font-weight: normal;
   font-size: 14px;
-  margin: 22px 0;
+  margin: 23px 0;
 }
 
 .form-field {
@@ -434,15 +434,10 @@ select {
   height: 27px;
   line-height: 27px;
   margin: 5px 0 20px;
-  li {
-    color: white;
-    font-weight: 400;
-    border: none;
-    padding: 5px 7px;
+  li.token-input-token-facebook {
+    padding: 7px 9px;
     background-color: #2d3c48;
-    span {
-      color: white;
-    }
+    color: white;
   }
 }
 
