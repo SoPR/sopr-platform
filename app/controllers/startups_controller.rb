@@ -5,7 +5,7 @@ class StartupsController < ApplicationController
   # GET /startups
   # GET /startups.json
   def index
-    @startups = Startup.all
+    @startups = Startup.order("created_at")
   end
 
   # GET /startups/1
