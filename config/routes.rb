@@ -1,4 +1,5 @@
 SoprPlatform::Application.routes.draw do
+  get 'about', to: 'about#index'
   resources :startups
   resources :events
   resources :resources
