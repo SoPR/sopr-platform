@@ -9,16 +9,13 @@
   width: 100%;
 }
 
-#header .span8 {
-    margin-left: 0;
-  }
 
-  .logo {
+.logo {
   margin-top: 0px;
   padding: 0;
-  }
+}
 
-  .logo h1 {
+.logo h1 {
   background: image-url('logo.png') no-repeat;
   position: relative;
   text-indent: -9999px;
@@ -26,10 +23,6 @@
   width: 160px;
   margin: 0;
   line-height: 65px;
-  margin-left: 0;
-}
-
-#menu {
   margin-left: 0;
 }
 
