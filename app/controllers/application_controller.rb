@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    new_user? ? edit_user_registration_path(anchor: 'profile') : root_path
+    new_user? ? edit_user_registration_path(anchor: 'profile') : users_path
   end
 
   protected
