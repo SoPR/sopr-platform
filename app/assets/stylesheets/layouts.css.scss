@@ -428,6 +428,19 @@ select {
       text-decoration: underline;
     }
   }
+
+  .get-involved {
+    text-align: center;
+    margin-top: 20px;
+    .involved-icon {
+      height: 80px;
+      line-height: 80px;
+      vertical-align: middle;
+      &.github img {
+        margin-top: -17px;
+      }
+    }
+  }
 }
 
 /* Global Forms Style */
