@@ -12,8 +12,12 @@
 <section class='container'>
   <div class='row-fluid'>
     <div id='content'>
-      <% @users.each do |user| %>
-        <%= render 'user_card', user: user %>
+      <% @users.in_groups_of(3) do |group| %>
+        <div class="row">
+          <% group.compact.each do |user| %>
+            <%= render 'user_card', user: user %>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>
