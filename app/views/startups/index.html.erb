@@ -13,35 +13,7 @@
   <div class='container'>
     <div class='row-fluid'>
       <% @startups.each do |startup| %>
-        <div class='span6 startupcard'>
-          <div class='startupcard-header'>
-            <div class='startupimage'>
-              <%= image_tag(startup.image_url(:thumb), :class => "startuplogo") %>
-            </div>
-            <div class='startupinfo'>
-              <div class='startupinfo-head'>
-                <h1><%= startup.name %></h1>
-              </div>
-              <div class='clearfix'></div>
-              <div class='startupcontent'>
-                <div class='startuppitch'>
-                  <%= startup.pitch %>
-                </div>
-                <div class='startuptags'>
-                   <ul>
-                    <% unless startup.website.blank? %>
-                      <li><a target='_blank' href="<%= startup.website %>"><i class='icon-globe-2'></i></a></li>
-                    <% end %>
-                    <% market_names_list(startup) %>
-                   </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class='startupabout'>
-            <%= startup.product %>
-          </div>
-        </div>
+        <%= render 'startup_card', startup: startup %>
       <% end %>
     </div>
   </div>

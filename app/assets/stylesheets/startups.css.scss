@@ -61,52 +61,32 @@ $radius: 3px;
       max-width: 97%;
       min-width: 120px;
       font-size: 14px;
-      margin-top: 6px;
       .startuppitch {
         font-weight: 500;
         font-size: 14px;
         color: $subtitle-color;
         margin-bottom: 4px;
       }
-      .startuptags {
-        line-height: 16px;
-        margin: 8px 0 0;
-        background: none;
-        padding: 0;
-        float: left;
-        width:100%;
-        ul {
-          float: left;
-          width: 100%;
-          margin: 2px 0 0 0px;
-          list-style: none;
-          font-size: 12px;
-          line-height: 16px;
-          background: none;
-          padding: 0;
-          li {
-            float: left;
-            padding-right: 16px;
-            color:  $info-color;
-            i {
-              color: $info-color;
-            }
-          }
-          .markets {
-            margin-top:-1px;
-            font-weight:500;
+      .startup-website {
+        i.icon-globe-2 {
+          margin: 4px 4px 0 -3px;
+          color: $info-color;
+        }
+        a {
+          color: $info-color;
+          &:hover {
+            color: #333;
           }
         }
       }
     }
   }
   .startupabout {
-    width: 100%;
-    margin-top: 12px;
+    width: 300px;
     overflow: hidden;
     vertical-align: top;
     min-width: 200px;
-    margin: 20px 0 0;
+    margin: 22px 0 0;
     float: left;
     font-size: 13px;
     font-weight: 400;
