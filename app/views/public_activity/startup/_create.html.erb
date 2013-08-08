@@ -1,3 +1,3 @@
 <%= content_tag(:i, '', class: 'icon-briefcase') %>
 <%= content_tag(:strong, (link_to activity.trackable.name, startup_path(activity.trackable.slug))) %>
-Added to Startup List
+Added to Startup List <%= content_tag(:em, (time_ago_in_words(activity.created_at).concat(' ago'))) %>
