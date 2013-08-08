@@ -34,20 +34,19 @@
 }
 
 #menu ul {
-  margin-left: 0;
   margin-bottom: 0;
   list-style: none;
 }
 
 #menu ul li {
   line-height: 86px;
-  float: left;
-  width: 126px;
+  display: inline-block;
+  width: 110px;
   position: relative;
   text-align: center;
   margin-top: -10px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 #menu ul li a:hover {
