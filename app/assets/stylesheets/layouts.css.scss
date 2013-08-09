@@ -582,4 +582,39 @@ input[type="email"], input[type="url"], input[type="search"], input[type="tel"],
   }
 }
 
+.footer {
+  position: relative;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #777;
+  border-top: 1px solid #eee;
+
+  .made-with-love {
+    position: absolute;
+    top: 30px;
+    left: 45%;
+    height: 24px;
+    width: 105px;
+    margin-left: -12px;
+    color: #ccc;
+
+    .heart {
+      color: red;
+    }
+  }
+}
+
+.footer-links {
+  margin: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+    line-height: 16px;
+    margin-left: 10px;
+  }
+}
+
 
