@@ -12,7 +12,9 @@
   </div>
   <div class='userinfo'>
     <%= content_tag(:h1, user.full_name, title: user.full_name) %>
-    <%= content_tag(:h3, user.role.titlecase) %>
+    <% if user.role %>
+      <%= content_tag(:h3, user.role.titlecase) %>
+    <% end %>
   </div>
   <div class='userabout'>
     <%= content_tag(:p, user.bio) %>

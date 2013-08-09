@@ -4,11 +4,6 @@
     <%= devise_error_messages! %>
 
     <div>
-      <%= f.select :role, User.roles, :prompt => true %>
-      <p>This is your role within the startup community.</p>
-    </div>
-
-    <div>
       <%= f.text_field :full_name, :placeholder => 'Full Name' %>
     </div>
 
