@@ -324,7 +324,7 @@ input[type="checkbox"] {
 /* Subheader Global Style */
 
 #subheader {
-  background: #f8f8f8;
+  background: #f5f6f7;
   border-bottom: 1px solid #eee;
   position: relative;
   margin-bottom: 20px;
@@ -411,6 +411,7 @@ select {
 }
 
 /* Comming Soon Section Global Style */
+
 
 .coming-soon {
   p {
@@ -582,6 +583,9 @@ input[type="email"], input[type="url"], input[type="search"], input[type="tel"],
   }
 }
 
+
+/* Footer Global Style */
+
 .footer {
   position: relative;
   margin-top: 30px;
@@ -597,12 +601,14 @@ input[type="email"], input[type="url"], input[type="search"], input[type="tel"],
     top: 30px;
     left: 45%;
     height: 24px;
-    width: 105px;
+    width: 115px;
     margin-left: -12px;
     color: #ccc;
 
     .heart {
       color: red;
+      margin-right: 4px;
+      margin-top: 3px;
     }
   }
 }
