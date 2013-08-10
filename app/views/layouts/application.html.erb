@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta property="og:title" content="Startups of Puerto Rico"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="http://startupsofpuertorico.com"/>
+  <meta property="og:image" content="<%= asset_path('logo-share.png') %>"/>
+  <meta property="og:site_name" content="Startups of Puerto Rico"/>
+  <meta property="fb:admins" content="501641940,502082211"/>
+  <meta property="og:locale" content="en_US"/>
   <title>Startups of Puerto Rico</title>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= favicon_link_tag 'favicon.ico' %>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+  <%= favicon_link_tag "favicon.ico" %>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">
 </head>
 <body class="<%= body_class %>">
 
-  <%= render 'shared/header' %>
+  <%= render "shared/header" %>
 
   <%= yield :subheader %>
 
@@ -17,7 +24,7 @@
 
   <%= yield %>
 
-  <%= render 'shared/footer' %>
+  <%= render "shared/footer" %>
 
   <%= javascript_include_tag "application" %>
 
