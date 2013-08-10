@@ -31,7 +31,7 @@ group :doc do
 end
 
 gem 'multi_json', '1.7.8'
-gem 'devise', '3.0.1'
+gem 'devise', '3.0.2'
 gem 'rails_admin'
 gem 'carrierwave'
 gem 'rmagick'
