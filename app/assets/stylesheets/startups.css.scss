@@ -7,6 +7,7 @@ $radius: 3px;
   background:#fff;
   border: 1px solid #ddd;
   padding:20px;
+  margin-bottom:20px;
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   border-radius: $radius;
@@ -15,6 +16,9 @@ $radius: 3px;
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  &:nth-child(odd) {
+    margin-left: 0 !important;
+  }
   .startupimage {
     border: 1px solid #ddd;
     background-color: #fff;
