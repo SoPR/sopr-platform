@@ -88,5 +88,5 @@ SoprPlatform::Application.configure do
     password: ENV["SMTP_PASSWORD"],
   }
 
-  config.action_mailer.default_url_options = { :host => 'sopr.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'http://www.startupsofpuertorico.com' }
 end
