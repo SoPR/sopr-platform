@@ -27,15 +27,14 @@ module Concerns::Gravatar
   end
 
   def prefill_social_data
-    self.facebook_username = self.facebook if self.facebook?
-    self.flickr_username   = self.flickr   if self.flickr?
-    self.twitter_username  = self.twitter  if self.twitter?
-    self.linkedin_username = self.linkedin if self.linkedin?
-    self.bio               = self.about_me unless self.about_me.nil?
+    %w(facebook flickr twitter linkedin).each do |network|
+      self.assign_attributes("#{network}_username".to_sym => self.method(network).call) if (self.method("#{network}?").call)
+    end
+    self.bio = self.about_me unless self.about_me.nil?
   end
 
   def gravatar_user_hash
-     Digest::MD5::hexdigest(self.email.downcase)
+    Digest::MD5::hexdigest(self.email.downcase)
   end
 
   # Returns an OpenStruct object with methods for each account found
