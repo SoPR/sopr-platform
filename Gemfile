@@ -32,7 +32,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'multi_json', '1.7.8'
+gem 'multi_json', '1.7.9'
 gem 'devise', '3.0.2'
 gem 'rails_admin'
 gem 'carrierwave'
