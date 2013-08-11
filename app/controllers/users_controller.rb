@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
-    # GET /users
-    # GET /users.json
-    def index
-      @users = User.order("created_at")
-    end
-
+  def index
+    @users = User.order("created_at").page params[:page]
+  end
 end
