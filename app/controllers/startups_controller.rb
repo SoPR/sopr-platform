@@ -35,7 +35,7 @@ class StartupsController < ApplicationController
         format.json { render action: 'show', status: :created, location: @startup }
       else
         format.html { render action: 'new' }
-        format.json { render json: @startup.errors, status: :unprocessable_entity }
+        format.json { json_errors }
       end
     end
   end
@@ -49,7 +49,7 @@ class StartupsController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @startup.errors, status: :unprocessable_entity }
+        format.json { json_errors }
       end
     end
   end
@@ -80,5 +80,9 @@ class StartupsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def startup_params
       params.require(:startup).permit(:name, :pitch, :website, :product, :market_list, :user_id, :image, :default_logo)
+    end
+
+    def json_errors
+      render json: @startup.errors, status: :unprocessable_entity
     end
 end
