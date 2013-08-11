@@ -30,55 +30,51 @@ module UsersHelper
 
   def social_icon_links(user)
     content_tag :ul do
-      concat(content_tag(:li, facebook_icon_link(user)) ) if user.facebook_username?
-      concat(content_tag(:li, twitter_icon_link(user))) if user.twitter_username?
-      concat(content_tag(:li, linkedin_icon_link(user))) if user.linkedin_username?
-      concat(content_tag(:li, github_icon_link(user))) if user.github_username?
-      concat(content_tag(:li, flickr_icon_link(user))) if user.flickr_username?
-      concat(content_tag(:li, dribbble_icon_link(user))) if user.dribbble_username?
-      concat(content_tag(:li, website_icon_link(user))) if user.website_url?
+      %w(facebook twitter linkedin github flickr dribbble website).each do |social|
+        concat(content_tag(:li, send("#{social}_icon_link", user))) if (social.eql?('website') ? user.send("#{social}_url?") : user.send("#{social}_username?"))
+      end
     end
   end
 
   def facebook_icon_link(user)
     link_to facebook_url(user) do
-      content_tag(:i, '', class: 'icon-facebook-1')
+      content_tag(:em, '', class: 'icon-facebook-1')
     end
   end
 
   def twitter_icon_link(user)
     link_to twitter_url(user) do
-      content_tag(:i, '', class: 'icon-twitter-1')
+      content_tag(:em, '', class: 'icon-twitter-1')
     end
   end
 
   def linkedin_icon_link(user)
     link_to linkedin_url(user) do
-      content_tag(:i, '', class: 'icon-linkedin-2')
+      content_tag(:em, '', class: 'icon-linkedin-2')
     end
   end
 
   def github_icon_link(user)
     link_to github_url(user) do
-      content_tag(:i, '', class: 'icon-github')
+      content_tag(:em, '', class: 'icon-github')
     end
   end
 
   def flickr_icon_link(user)
     link_to flickr_url(user) do
-      content_tag(:i, '', class: 'icon-flickr')
+      content_tag(:em, '', class: 'icon-flickr')
     end
   end
 
   def dribbble_icon_link(user)
     link_to dribbble_url(user) do
-      content_tag(:i, '', class: 'icon-dribbble-1')
+      content_tag(:em, '', class: 'icon-dribbble-1')
     end
   end
 
   def website_icon_link(user)
     link_to user.website_url do
-      content_tag(:i, '', class: 'icon-globe-2')
+      content_tag(:em, '', class: 'icon-globe-2')
     end
   end
 end
