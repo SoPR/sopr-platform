@@ -28,7 +28,7 @@ To install every dependency:
 
 Database creation (Development Environment):
 
-    $ bin/rake db:migration
+    $ bin/rake db:migrate
 
 To run the project:
 
