@@ -412,10 +412,30 @@ select {
 
 /* Comming Soon Section Global Style */
 
+.comming-soon-title {
+  line-height: 18px;
+  font-size: 16px;
+  text-align: center;
+  margin: 35px 0 16px;
+  font-weight: 400;
+}
+
+.comming-soon-divider {
+  border-top: 1px solid #ddd;
+  width: 6%;
+  margin: 0 auto 13px;
+}
+
+.comming-soon-help {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}
+
 
 .coming-soon {
   p {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 24px;
   }
   .lead {
@@ -423,7 +443,7 @@ select {
     line-height: 30px;
   }
   a {
-    color: #08c;
+    color: #5b93fc;
     &:hover {
       color: #005580;
       text-decoration: underline;
@@ -432,13 +452,27 @@ select {
 
   .get-involved {
     text-align: center;
-    margin-top: 20px;
-    .involved-icon {
-      height: 80px;
-      line-height: 80px;
-      vertical-align: middle;
-      &.github img {
-        margin-top: -17px;
+    border: 1px solid #f5f6f7;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    margin-top: 45px;
+    margin-bottom: 60px;
+    .span4 {
+      padding: 30px 40px;
+      .involved-icon {
+        height: 80px;
+        line-height: 80px;
+        vertical-align: middle;
+        padding: 30px 20px;
+        background: #f5f6f7;
+        margin-bottom: 25px;
+        &.github img {
+          margin-top: -7px;
+        }
+        &.email img {
+          margin-top: -11px;
+        }
       }
     }
   }
