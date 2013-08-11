@@ -63,3 +63,5 @@ end
 group :test do
   gem 'capybara'
 end
+
+gem 'seed_dump'
