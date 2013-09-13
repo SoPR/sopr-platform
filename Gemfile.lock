@@ -16,6 +16,13 @@ GIT
       i18n (>= 0.5.0)
       railties (>= 3.0.0)
 
+GIT
+  remote: https://github.com/r23712/blimp.git
+  revision: 884a8263f1378161af6d30b77ce80b376dcefb7f
+  branch: master
+  specs:
+    blimp (0.0.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -103,6 +110,9 @@ GEM
     haml (4.0.3)
       tilt
     hike (1.2.3)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     i18n (0.6.4)
     jbuilder (1.5.0)
       activesupport (>= 3.0.0)
@@ -129,6 +139,7 @@ GEM
     mini_portile (0.5.1)
     minitest (4.7.5)
     multi_json (1.7.9)
+    multi_xml (0.5.5)
     nested_form (0.3.2)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
@@ -243,6 +254,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 2.4.1)
   asset_sync
+  blimp!
   capybara
   carrierwave
   coffee-rails (~> 4.0.0)
@@ -250,6 +262,7 @@ DEPENDENCIES
   excon (~> 0.25.3)
   factory_girl_rails
   friendly_id (~> 5.0.0.alpha1)!
+  httparty
   jbuilder (~> 1.2)
   jquery-rails
   kaminari

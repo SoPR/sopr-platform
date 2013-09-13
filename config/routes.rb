@@ -5,6 +5,7 @@ SoprPlatform::Application.routes.draw do
   resources :resources
   resources :groups
   resources :activities
+  get 'status', to: 'status#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
