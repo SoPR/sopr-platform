@@ -73,7 +73,7 @@ module UsersHelper
   end
 
   def website_icon_link(user)
-    link_to user.website_url do
+    link_to(escape_once(user.website_url)) do
       content_tag(:em, '', class: 'icon-globe-2')
     end
   end

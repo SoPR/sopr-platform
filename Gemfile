@@ -23,7 +23,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 1.5'
 
 gem 'kaminari'
 
@@ -33,7 +33,7 @@ group :doc do
 end
 
 gem 'multi_json', '1.7.9'
-gem 'devise', '3.0.2'
+gem 'devise', '3.0.3'
 gem 'rails_admin'
 gem 'carrierwave'
 gem 'blimp', git: 'https://github.com/r23712/blimp.git', branch: 'master'

@@ -15,7 +15,7 @@
         <% unless startup.website.blank? %>
           <div class="startup-website">
             <i class="icon-globe-2"></i>
-            <a target="_blank" href="<%= startup.website %>">
+            <a target="_blank" href="<%= escape_once(startup.website) %>">
               <%= startup.website %>
             </a>
           </div>
