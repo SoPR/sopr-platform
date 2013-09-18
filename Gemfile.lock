@@ -17,13 +17,6 @@ GIT
       i18n (>= 0.5.0)
       railties (>= 3.0.0)
 
-GIT
-  remote: https://github.com/r23712/blimp.git
-  revision: 884a8263f1378161af6d30b77ce80b376dcefb7f
-  branch: master
-  specs:
-    blimp (0.0.3)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -136,7 +129,6 @@ GEM
     mini_portile (0.5.1)
     minitest (4.7.5)
     multi_json (1.7.9)
-    multi_xml (0.5.5)
     nested_form (0.3.2)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
@@ -251,7 +243,6 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 2.4.1)
   asset_sync
-  blimp!
   capybara
   carrierwave
   coffee-rails (~> 4.0.0)
