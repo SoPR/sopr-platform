@@ -36,14 +36,12 @@ gem 'multi_json', '1.7.9'
 gem 'devise', '3.0.3'
 gem 'rails_admin'
 gem 'carrierwave'
-gem 'blimp', git: 'https://github.com/r23712/blimp.git', branch: 'master'
 gem 'rmagick'
 gem "asset_sync"
 gem "excon", "~> 0.25.3"
 gem "acts-as-taggable-on", "~> 2.4.1"
 gem 'friendly_id', '~> 5.0.0.alpha1', github: 'FriendlyId/friendly_id', branch: 'master'
 gem "public_activity", "~> 1.4.0", github: 'pokonski/public_activity', branch: 'master'
-gem 'httparty'
 
 group :production do
   gem 'rails_12factor'
