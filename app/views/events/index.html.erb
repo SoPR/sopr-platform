@@ -13,33 +13,46 @@
   <div class='container'>
     <div class='row-fluid'>
      <div class='span3'>
-      <h3 class='months'>Events by Month</h3>
-      <ul class='months-list'>
-        <li class='months-list-title'></li>
-      </ul>
+      <div class='row-fluid'>
+        <h3 class='months'>Events by Month</h3>
+        <ul class='months-list'>
+          <% @event_months.each do |month, events| %>
+            <li class='months-list-title'><a href="#"><%= Date::MONTHNAMES[month]%></a></li>
+          <% end %>
+        </ul>
+      </div>
      </div>
-     <div class='span9'></div>
+     <div class='span9'> 
+      <% @event_months.each do |month, events| %>
+        <div class='row-fluid'>
+          <h3 class='group-monthly-title'><%= Date::MONTHNAMES[month] %></h3>
+        </div>
+        <div class='row-fluid'>
+          <% for event in events %>
+            <div class='span6'>
+             <div class='event-card'>
+              <a href="<%= event.url %>">
+               <div class='event-image'>
+                <%= image_tag event.image_url(:eventphoto), :class => 'eimage', :style =>  'width:100%;' %>
+               </div>
+               <div class='event-content'>
+                <h1 class='event-title'><%= event.name %></h1>
+                <h2 class='event-place'><%= event.where %></h2>
+                <h3 class='event-time-date'><%= event.start_time %></h3>
+               </div>
+              </a>
+             </div>
+            </div>
+         <% end %>
+        </div>
+       <%= link_to 'Show', event %>
+       <%= link_to 'Edit', edit_event_path(event) %>
+       <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+     </div>
     </div>
   </div>
 </section>
-
-
-
-
-
-<% @events.each do |event| %>
-        <tr>
-          <td><%= event.name %></td>
-          <td><%= event.where %></td>
-          <td><%= event.start_time %></td>
-          <td><%= event.url %></td>
-          <td><%= image_tag event.image_url(:eventphoto) %></td>
-          <td><%= event.user %></td>
-          <td><%= link_to 'Show', event %></td>
-          <td><%= link_to 'Edit', edit_event_path(event) %></td>
-          <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
 
 
 <br>

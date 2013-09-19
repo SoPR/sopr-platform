@@ -20,12 +20,7 @@
     <%= f.text_field :where %>
   </div>
   <div class="field">
-    <%= f.label :start_time %><br>
-    <%= select_day(Time.now) %>
-    <%= select_month(Time.now) %>
-    <%= select_year(Time.now) %>
-    <%= select_hour(Time.now, ampm: true) %>
-    <%= select_minute(Time.now) %>
+    <%= f.datetime_select :start_time %>
   </div>
   <div class="field">
     <%= f.label :url %><br>
