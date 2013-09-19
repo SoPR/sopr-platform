@@ -38,7 +38,7 @@
                <div class='event-content'>
                 <h1 class='event-title'><%= event.name %></h1>
                 <h2 class='event-place'><%= event.where %></h2>
-                <h3 class='event-time-date'><%= event.start_time %></h3>
+                <h3 class='event-time-date'><%= event.start_time.strftime("%B %d @ %I:%M %p") %></h3>
                </div>
               </a>
              </div>

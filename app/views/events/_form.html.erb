@@ -20,7 +20,7 @@
     <%= f.text_field :where %>
   </div>
   <div class="field">
-    <%= f.datetime_select :start_time %>
+    <%= f.datetime_select :start_time, ampm: true, order: [:day, :month, :year] %>
   </div>
   <div class="field">
     <%= f.label :url %><br>
