@@ -1,16 +1,19 @@
-<% content_for :subheader do %>
-<section id="subheader">
-  <div class="container">
-    <div class='row-fluid'>
-      <div class='span12'>
-        <h1 class='subheader-title'>E·vents</h1>
-      </div>
-    </div>
-  </div>
-</section>
-<% end %>
 
-<div class="container coming-soon">
-    <p class="lead">something that occurs in a certain place during a particular interval of time.</p>
-    <%= render 'shared/get_involved' %>
-</div>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.where %></td>
+        <td><%= event.start_time %></td>
+        <td><%= event.url %></td>
+        <td><%= event.image %></td>
+        <td><%= event.user %></td>
+        <td><%= link_to 'Show', event %></td>
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+
+<br>
+
+<%= link_to 'New Event', new_event_path %>

@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :startups
+  has_many :events
 
   include Concerns::Gravatar
 
