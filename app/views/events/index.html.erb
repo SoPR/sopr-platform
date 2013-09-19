@@ -1,17 +1,33 @@
-
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= event.where %></td>
-        <td><%= event.start_time %></td>
-        <td><%= event.url %></td>
-        <td><%= image_tag @event.image_url(:eventphoto) %></td>
-        <td><%= event.user %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+<% content_for :subheader do %>
+<section id="subheader">
+  <div class="container">
+    <div class='row-fluid'>
+      <div class='span12'>
+        <h1 class='subheader-title'>A collection of Startup Events in Puerto Rico</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<% end %>
+<section id='content'>
+  <div class='container'>
+    <div class='row-fluid'>
+     <% @events.each do |event| %>
+        <tr>
+          <td><%= event.name %></td>
+          <td><%= event.where %></td>
+          <td><%= event.start_time %></td>
+          <td><%= event.url %></td>
+          <td><%= image_tag event.image_url(:eventphoto) %></td>
+          <td><%= event.user %></td>
+          <td><%= link_to 'Show', event %></td>
+          <td><%= link_to 'Edit', edit_event_path(event) %></td>
+          <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </div>
+  </div>
+</section>
 
 
 <br>
