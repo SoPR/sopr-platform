@@ -1,4 +1,4 @@
-<%= form_for(@event) do |f| %>
+<%= form_for @event, :html => {:multipart => true} do |f|%>
   <% if @event.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :image %><br>
-    <%= image_tag(@event.image_url(:normal), :class => "startuplogo") %>
+    <%= image_tag(@event.image_url(:eventphoto) ) %>
     <%= f.file_field :image, :class => 'form-photo' %>
   </div>
   <div class="actions">

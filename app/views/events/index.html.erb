@@ -5,7 +5,7 @@
         <td><%= event.where %></td>
         <td><%= event.start_time %></td>
         <td><%= event.url %></td>
-        <td><%= event.image %></td>
+        <td><%= image_tag @event.image_url(:eventphoto) %></td>
         <td><%= event.user %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
