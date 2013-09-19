@@ -9,10 +9,25 @@
   </div>
 </section>
 <% end %>
-<section id='content'>
+<section id='events'>
   <div class='container'>
     <div class='row-fluid'>
-     <% @events.each do |event| %>
+     <div class='span3'>
+      <h3 class='months'>Events by Month</h3>
+      <ul class='months-list'>
+        <li class='months-list-title'></li>
+      </ul>
+     </div>
+     <div class='span9'></div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<% @events.each do |event| %>
         <tr>
           <td><%= event.name %></td>
           <td><%= event.where %></td>
@@ -25,9 +40,6 @@
           <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
-    </div>
-  </div>
-</section>
 
 
 <br>

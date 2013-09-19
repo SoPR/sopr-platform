@@ -1,3 +1,17 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#events .span3 {
+  width: 16.076923%;
+}
+.months {
+  font-size: 16.5px;
+  font-weight: 600;
+}
+.months-list {
+  list-style: none;
+  margin-left: 0;
+}
+.months-list-title {
+  font-size: 14px;
+}
