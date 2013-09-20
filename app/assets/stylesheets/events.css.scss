@@ -32,10 +32,23 @@
 .event-card {
   background: white;
   border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
   border: 1px solid #e6e6e6;
+}
+.event-card:hover {
+  vertical-align: top;
+  -webkit-box-shadow: 0 0px 4px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 0px 4px rgba(0,0,0,0.1);
+}
+.event-card a:hover{
+  color:#333;
 }
 .event-image img {
   border-radius: 2px 2px 0 0;
+  -webkit-border-radius: 2px 2px 0 0;
+  -moz-border-radius: 2px 2px 0 0;
 }
 .event-content {
   padding: 13px;

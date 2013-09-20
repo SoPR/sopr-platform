@@ -22,4 +22,5 @@ class ApplicationController < ActionController::Base
   def new_user?
     current_user.sign_in_count.eql?(1)
   end
+  
 end
