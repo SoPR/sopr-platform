@@ -40,4 +40,10 @@ $ ->
             updateFormAction(targetClass)
             updateLocationHash(targetClass)
     else if bodyClass is 'users-index'
-        $(".usercard").equalHeights()        
+        $(".usercard").equalHeights()
+        $(document).keypress (event) ->
+            $textSearch = $('#user-search-bar')
+
+            if event.which is 13
+                event.preventDefault() if $textSearch.val().trim() is ''
+                $textSearch.val($textSearch.val().trim())
