@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   include Concerns::Gravatar
   include PgSearch
 
-  scope :hirable, ->(hirable_flag) {where(available_for_hire: true) unless hirable_flag.empty?}
+  scope :hirable, ->(hirable_flag) {where(available_for_hire: hirable_flag) if hirable_flag}
   scope :filter_by_roles, ->(role_flags) {where(role: role_flags) unless role_flags.empty?}
   scope :filter_by_bio, ->(keyword_filter) {_filter_by_bio(keyword_filter) unless keyword_filter.empty?}
 
@@ -42,58 +42,54 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.search(search_query)
-    # Return an ActiveRecord::Relation with Users that meet the search query.
-    #
-    # TODO: Ignore accents.
-    #       Choose a more intuitive filter than 'is:forhire'
-    #       Review for security
-    #       Automated testing.
-    #       README explaining how to test/use search in dev. Config files edited etc.
-
-    keyword_filter = search_query.nil? ? '' : String.new(search_query)
-    roles_filter = []
-    hirable_filter = ''
-
-    # Collect filters
-    if /is:forhire/.match(keyword_filter) != nil
-      hirable_filter = 'true'
-      keyword_filter.slice!('is:forhire')
-    end
-    if /is:hacker/.match(keyword_filter) != nil
-      roles_filter << 'hacker'
-      keyword_filter.slice!('is:hacker')
-    end
-    if /is:developer/.match(keyword_filter) != nil
-      roles_filter << 'developer'
-      keyword_filter.slice!('is:developer')
-    end
-    if /is:designer/.match(keyword_filter) != nil
-      roles_filter << 'designer'
-      keyword_filter.slice!('is:designer')
-    end
-    if /is:entrepreneur/.match(keyword_filter) != nil
-      roles_filter << 'entrepreneur'
-      keyword_filter.slice!('is:entrepreneur')
-    end
-    if /is:artist/.match(keyword_filter) != nil
-      roles_filter << 'artist'
-      keyword_filter.slice!('is:artist')
-    end
-    if /is:business/.match(keyword_filter) != nil
-      roles_filter << 'business'
-      keyword_filter.slice!('is:business')
-    end
-
-    User.hirable(hirable_filter).filter_by_roles(roles_filter).filter_by_bio(keyword_filter)
-  end
-
   def confirm!
     welcome_message
     super
   end
 
-  private
+  def self.search(search_query)
+    # Return an ActiveRecord::Relation with Users that meet the search query.
+    #
+    # TODO: Review for security
+    #       Automated testing.
+    #       README explaining how to test/use search in dev. Config files edited etc.
+
+    keyword_filter = search_query.nil? ? '' : String.new(cleanup_keywords(search_query))
+    hirable_filter, roles_filter, keywords_filter  = process_search(keyword_filter)
+
+    User.hirable(hirable_filter).filter_by_roles(roles_filter).filter_by_bio(keywords_filter)
+  end
+
+  private 
+  
+  def self.cleanup_keywords(args)
+    args.split(' ').map { |arg| arg.downcase.singularize }.join(' ')
+  end
+
+  def self.process_search(keywords)
+    hirable, keywords_filtered          = process_hirable(keywords)
+    roles_filtered, keywords_refiltered = process_roles(keywords_filtered)
+
+    [hirable, roles_filtered, keywords_refiltered.strip]
+  end
+
+  def self.process_roles(keywords, roles_filtered = [])
+    roles.map do |role|
+      if /#{role.last}|is:#{role.last}/.match(keywords) != nil
+        roles_filtered << Regexp.last_match.to_s
+        keywords.slice!(Regexp.last_match.to_s)
+      end
+    end
+    [roles_filtered, keywords]
+  end
+
+  def self.process_hirable(keywords, hirable = false)
+    if /hireable|hirable|hire|forhire|is:forhire/.match(keywords) != nil
+      hirable = true
+      keywords.slice!(Regexp.last_match.to_s)
+    end
+    [hirable, keywords]
+  end
 
   def welcome_message
     UserMailer.welcome_email(self).deliver
@@ -104,7 +100,8 @@ class User < ActiveRecord::Base
                   :against => :bio,
                   :using => {
                     :tsearch => {any_word: true}
-                  }
+                  },
+                  :ignoring => :accents
 
   # Public Activity
   include PublicActivity::Model
