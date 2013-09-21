@@ -4,6 +4,9 @@
     <div class='row-fluid'>
       <div class='span12'>
         <h1 class='subheader-title'>People a collection of creative talent from P.R.</h1>
+        <%= form_tag('/users', method: 'get', class: 'user-search-form') do %>
+          <%= text_field_tag(:search_query, nil, placeholder: 'search (e.g. is:forhire is:hacker python)', id: 'user-search-bar') %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -22,5 +25,10 @@
     </div>
   </div>
 
-  <%= paginate @users %>
+  <% if URI.parse(request.original_url).query.nil? %>
+    <%= paginate @users %>
+  <% else %>
+    <!-- TODO: Find a more elegant solution to persist search_query in pagination. -->
+    <%= paginate @users, params: {search_query: CGI.parse(URI.parse(request.original_url).query)['search_query'][0]} %>
+  <% end %>
 </section>

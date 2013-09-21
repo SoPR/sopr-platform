@@ -40,4 +40,4 @@ $ ->
             updateFormAction(targetClass)
             updateLocationHash(targetClass)
     else if bodyClass is 'users-index'
-        $(".usercard").equalHeights()
+        $(".usercard").equalHeights()        
