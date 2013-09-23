@@ -4,8 +4,8 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', group: :development
+# Use PostgreSQL as the database for Active Record
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -46,7 +46,6 @@ gem 'pg_search'
 
 group :production do
   gem 'rails_12factor'
-  gem 'pg'
   gem 'unicorn'
 end
 
@@ -59,9 +58,6 @@ group :test, :development do
   gem 'factory_girl_rails'
   # Use debugger
   # gem 'debugger', group: [:development, :test]
-
-  # For testing PostgreSQL full text search.
-  # gem 'pg'
 end
 
 group :test do
