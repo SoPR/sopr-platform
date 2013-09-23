@@ -118,13 +118,14 @@ Using **Heroku**:
 
 `brew install postgresql`
 
-Download [Postgres.app](http://postgresapp.com/), open it and run `psql -h localhost` in the terminal. 
+Download [Postgres.app](http://postgresapp.com/), open it and run `psql -h localhost` in the terminal to open
+PostgreSQL interactive mode. We will run the next few commands in this console. 
 
 Run `CREATE DATABASE sopr_platform;` to create the development database.
 
 Run `CREATE USER postgres WITH PASSWORD 'postgres';` to create the PostgreSQL "super user".
 
-Run `GRANT ALL PRIVILEGES ON DATABASE 'sopr_platform' to postgres;` to really become super user.
+Run `ALTER USER postgres WITH SUPERUSER;` to really become super user.
 
 Note that this will run PostgreSQL 9.2.4 with a 9.3.0 server so make sure you stick to 9.2.4 features to
 ensure your code will work on production.
@@ -149,9 +150,6 @@ Run [pgAdmin III](http://www.pgadmin.org/) to manage your PostgreSQL server with
 [Need to change superuser database password?](http://scratching.psybermonkey.net/2009/06/postgresql-how-to-reset-user-name.html)
 
 Here is a detailed [guide](http://stackoverflow.com/a/18007600/810606) for the whole proccess and troubleshooting.
-
-
-
 
 ## Requirements
 
