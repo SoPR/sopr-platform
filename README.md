@@ -123,14 +123,12 @@ PostgreSQL interactive mode. We will run the next few commands in this console.
 
 Run `CREATE DATABASE sopr_platform;` to create the development database.
 
-Run `CREATE USER postgres WITH PASSWORD 'postgres';` to create the PostgreSQL "super user".
-
-Run `ALTER USER postgres WITH SUPERUSER;` to really become super user.
-
 Note that this will run PostgreSQL 9.2.4 with a 9.3.0 server so make sure you stick to 9.2.4 features to
 ensure your code will work on production.
 
 **The hard way:**
+
+First, uncomment the `username` and `password` options in the `config/database.yml` under development.
 
 Download [PostgreSQL 9.2.4](http://www.enterprisedb.com/products-services-training/pgdownload). 
 When running the installer please choose "postgres" as the super user's database password. 
