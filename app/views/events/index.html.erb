@@ -13,7 +13,7 @@
   <div class='container'>
     <div class='row-fluid'>
      <div class='span12'> 
-      <% @event_months.each do |month, events| %>
+      <%= @events.group_by { |t| t.created_at.month }.each do |month, events| %>
         <div class='row-fluid'>
           <h3 class='group-monthly-title'><%= Date::MONTHNAMES[month] %></h3>
         </div>
@@ -40,6 +40,5 @@
     </div>
   </div>
 </section>
-
 
 <%= link_to 'New Event', new_event_path %>
