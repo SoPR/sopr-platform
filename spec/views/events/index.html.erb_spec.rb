@@ -7,6 +7,7 @@ describe "events/index" do
 
   it "renders a list of events" do
     render
+#index view spec to use Event Factory with correct assertions
     assert_select 'div.row-fluid' do |element|
       assert_select 'h3.group-monthly-title', 1
     end
