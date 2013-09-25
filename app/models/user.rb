@@ -51,8 +51,6 @@ class User < ActiveRecord::Base
     # Return an ActiveRecord::Relation with Users that meet the search query.
     #
     # TODO: Review for security
-    #       Automated testing.
-    #       README explaining how to test/use search in dev. Config files edited etc.
 
     keyword_filter = search_query.nil? ? '' : String.new(cleanup_keywords(search_query))
     hirable_filter, roles_filter, keywords_filter  = process_search(keyword_filter)
@@ -63,7 +61,7 @@ class User < ActiveRecord::Base
   private 
   
   def self.cleanup_keywords(args)
-    args.split(' ').map { |arg| arg.downcase.singularize }.join(' ')
+    args.split(' ').map { |arg| arg.downcase }.join(' ')
   end
 
   def self.process_search(keywords)
@@ -76,7 +74,7 @@ class User < ActiveRecord::Base
   def self.process_roles(keywords, roles_filtered = [])
     roles.map do |role|
       if /#{role.last}|is:#{role.last}/.match(keywords) != nil
-        roles_filtered << Regexp.last_match.to_s
+        roles_filtered << role.last
         keywords.slice!(Regexp.last_match.to_s)
       end
     end
