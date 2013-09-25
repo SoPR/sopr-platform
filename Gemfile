@@ -52,6 +52,7 @@ end
 
 group :development do
   gem 'letter_opener'
+  gem "faker", "~> 1.2.0"
 end
 
 group :test, :development do
