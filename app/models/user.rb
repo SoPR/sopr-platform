@@ -63,7 +63,7 @@ class User < ActiveRecord::Base
   private 
   
   def self.cleanup_keywords(args)
-    args.split(' ').map { |arg| arg.downcase.singularize }.join(' ')
+    args.split(' ').map { |arg| arg.downcase }.join(' ')
   end
 
   def self.process_search(keywords)
