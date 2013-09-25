@@ -6,5 +6,7 @@ FactoryGirl.define do
     sequence(:username)   { |e| "DubstepKitten#{e.next}"}
     password Kernel.rand(6 ** 10)
     bio "I'm only a factory girl :("
+    role User.roles.sample[1]
+    available_for_hire [true, false].sample
   end
 end
