@@ -73,7 +73,7 @@ class User < ActiveRecord::Base
 
   def self.process_roles(keywords, roles_filtered = [])
     roles.map do |role|
-      if /#{role.last}|is:#{role.last}/.match(keywords) != nil
+      if /#{role.last}|is:#{role.last}/.match(keywords.singularize) != nil
         roles_filtered << role.last
         keywords.slice!(Regexp.last_match.to_s)
       end
