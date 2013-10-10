@@ -2,8 +2,6 @@ language: ruby
 rvm:
   - 2.0.0
 before_script:
-  # - rake db:create
   - psql -c 'create database myapp_test;' -U postgres
-  - rake db:migrate
   - rake db:test:prepare
 script: 'rake spec'
