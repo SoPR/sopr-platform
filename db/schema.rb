@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130807134758) do
+ActiveRecord::Schema.define(version: 20131010045233) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+  enable_extension "unaccent"
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -26,18 +30,28 @@ ActiveRecord::Schema.define(version: 20130807134758) do
     t.datetime "updated_at"
   end
 
+  create_table "events", force: true do |t|
+    t.string   "name"
+    t.string   "place"
+    t.datetime "date"
+    t.string   "image"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
     t.string   "username"
     t.integer  "item"
     t.string   "table"
     t.integer  "month",      limit: 2
-    t.integer  "year",       limit: 5
+    t.integer  "year",       limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories"
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories", using: :btree
 
   create_table "startups", force: true do |t|
     t.string   "name"
@@ -51,8 +65,8 @@ ActiveRecord::Schema.define(version: 20130807134758) do
     t.string   "slug"
   end
 
-  add_index "startups", ["slug"], name: "index_startups_on_slug", unique: true
-  add_index "startups", ["user_id"], name: "index_startups_on_user_id"
+  add_index "startups", ["slug"], name: "index_startups_on_slug", unique: true, using: :btree
+  add_index "startups", ["user_id"], name: "index_startups_on_user_id", using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
@@ -64,8 +78,8 @@ ActiveRecord::Schema.define(version: 20130807134758) do
     t.datetime "created_at"
   end
 
-  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
   create_table "tags", force: true do |t|
     t.string "name"
@@ -104,8 +118,8 @@ ActiveRecord::Schema.define(version: 20130807134758) do
     t.string   "unconfirmed_email"
   end
 
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

@@ -1,0 +1,67 @@
+// Place all the styles related to the Events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.span6:nth-child(2n+1) {
+  margin-left: 0;
+}
+.months {
+  font-size: 16.5px;
+  font-weight: 600;
+}
+.months-list {
+  list-style: none;
+  margin-left: 0;
+}
+.months-list-title {
+  font-size: 14px;
+}
+.group-monthly-title {
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f5f6f7;
+}
+.event-card {
+  background: white;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border: 1px solid #e6e6e6;
+}
+.event-card:hover {
+  vertical-align: top;
+  -webkit-box-shadow: 0 0px 4px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 0px 4px rgba(0,0,0,0.1);
+}
+.event-card a:hover{
+  color:#333;
+}
+.event-image img {
+  border-radius: 2px 2px 0 0;
+  -webkit-border-radius: 2px 2px 0 0;
+  -moz-border-radius: 2px 2px 0 0;
+}
+.event-content {
+  padding: 13px;
+}
+.event-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 10px 0;
+}
+.event-place {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  margin: 10px 0;
+}
+.event-time-date {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  margin: 10px 0 5px;
+}

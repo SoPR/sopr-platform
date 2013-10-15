@@ -4,8 +4,8 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', group: :development
+# Use PostgreSQL as the database for Active Record
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -42,10 +42,10 @@ gem "excon", "~> 0.25.3"
 gem "acts-as-taggable-on", "~> 2.4.1"
 gem 'friendly_id', '~> 5.0.0.alpha1', github: 'FriendlyId/friendly_id', branch: 'master'
 gem "public_activity", "~> 1.4.0", github: 'pokonski/public_activity', branch: 'master'
+gem 'pg_search'
 
 group :production do
   gem 'rails_12factor'
-  gem 'pg'
   gem 'unicorn'
 end
 
