@@ -32,12 +32,9 @@ ActiveRecord::Schema.define(version: 20131023154415) do
     t.datetime "date"
     t.string   "image"
     t.string   "url"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "events", ["user_id"], name: "index_events_on_user_id"
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"

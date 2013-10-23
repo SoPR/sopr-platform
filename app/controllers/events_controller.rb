@@ -5,7 +5,6 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
-    @event_months = @events.group_by { |t| t.date.month }
   end
 
   # GET /events/1
@@ -26,7 +25,6 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-    @event.user = current_user
 
     respond_to do |format|
       if @event.save
