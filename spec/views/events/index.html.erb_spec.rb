@@ -2,6 +2,20 @@ require 'spec_helper'
 
 describe "events/index" do
   before(:each) do
+    assign(:events, [
+        stub_model(Event,
+          :name => "Name",
+          :place => "Place",
+          :image => "Image",
+          :url => "Url"
+        ),
+        stub_model(Event,
+          :name => "Name",
+          :place => "Place",
+          :image => "Image",
+          :url => "Url"
+        )
+      ])
     assign(:events, [FactoryGirl.create(:event), FactoryGirl.create(:event)])
   end
 
