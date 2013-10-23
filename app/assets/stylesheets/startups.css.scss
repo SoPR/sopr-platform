@@ -1,23 +1,24 @@
 $title-color: #141823;
 $subtitle-color: #6a7181;
 $info-color: #adb2bb;
-$radius: 3px;
-
+$radius: 2px;
 .startupcard {
   background:#fff;
-  border: 1px solid #ddd;
+  border: 1px solid #e6e6e6;
   padding:20px;
-  margin-bottom:20px;
+  margin-bottom:15px;
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   border-radius: $radius;
   display: inline-block;
   vertical-align: top;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   &:nth-child(odd) {
     margin-left: 0 !important;
+  }
+  &:hover {
+    -webkit-box-shadow: 0 0px 4px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 0px 4px rgba(0,0,0,0.1);
   }
   .startupimage {
     border: 1px solid #ddd;
