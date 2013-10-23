@@ -5,6 +5,11 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+
+    respond_to do |format|
+      format.html
+      format.rss { render :layout => false }
+    end
   end
 
   private
