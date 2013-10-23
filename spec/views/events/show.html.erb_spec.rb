@@ -6,8 +6,7 @@ describe "events/show" do
       :name => "Name",
       :place => "Place",
       :image => "Image",
-      :url => "Url",
-      :user => nil
+      :url => "Url"
     ))
   end
 
@@ -18,6 +17,5 @@ describe "events/show" do
     rendered.should match(/Place/)
     rendered.should match(/Image/)
     rendered.should match(/Url/)
-    rendered.should match(//)
   end
 end

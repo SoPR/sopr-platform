@@ -7,15 +7,13 @@ describe "events/index" do
         :name => "Name",
         :place => "Place",
         :image => "Image",
-        :url => "Url",
-        :user => nil
+        :url => "Url"
       ),
       stub_model(Event,
         :name => "Name",
         :place => "Place",
         :image => "Image",
-        :url => "Url",
-        :user => nil
+        :url => "Url"
       )
     ])
   end
@@ -27,6 +25,5 @@ describe "events/index" do
     assert_select "tr>td", :text => "Place".to_s, :count => 2
     assert_select "tr>td", :text => "Image".to_s, :count => 2
     assert_select "tr>td", :text => "Url".to_s, :count => 2
-    assert_select "tr>td", :text => nil.to_s, :count => 2
   end
 end

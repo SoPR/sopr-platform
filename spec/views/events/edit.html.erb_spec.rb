@@ -6,8 +6,7 @@ describe "events/edit" do
       :name => "MyString",
       :place => "MyString",
       :image => "MyString",
-      :url => "MyString",
-      :user => nil
+      :url => "MyString"
     ))
   end
 
@@ -20,7 +19,6 @@ describe "events/edit" do
       assert_select "input#event_place[name=?]", "event[place]"
       assert_select "input#event_image[name=?]", "event[image]"
       assert_select "input#event_url[name=?]", "event[url]"
-      assert_select "input#event_user[name=?]", "event[user]"
     end
   end
 end
