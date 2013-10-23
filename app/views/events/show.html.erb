@@ -17,17 +17,12 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @event.image %>
+  <%= image_tag @event.image_url(:eventphoto) %>
 </p>
 
 <p>
   <strong>Url:</strong>
   <%= @event.url %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @event.user %>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
