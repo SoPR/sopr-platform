@@ -8,6 +8,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       format.html
+      format.json
       format.rss { render :layout => false }
     end
   end
