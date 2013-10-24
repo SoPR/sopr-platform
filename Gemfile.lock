@@ -104,6 +104,7 @@ GEM
       tilt
     hike (1.2.3)
     i18n (0.6.5)
+    icalendar (1.4.3)
     jbuilder (1.5.1)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -252,6 +253,7 @@ DEPENDENCIES
   excon (~> 0.25.3)
   factory_girl_rails
   friendly_id (~> 5.0.0.alpha1)!
+  icalendar (~> 1.4.3)
   jbuilder (~> 1.5)
   jquery-rails
   kaminari
