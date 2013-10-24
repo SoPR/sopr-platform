@@ -1,5 +1,3 @@
-require 'icalendar'
-
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
@@ -7,7 +5,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.where(['date >= ?', DateTime.now]).order('date')
-
+    puts events_to_ical(@events)
     respond_to do |format|
       format.html
       format.json
@@ -30,15 +28,18 @@ class EventsController < ApplicationController
 
     # Returns Icalendar string for upcoming events
     def events_to_ical(events)
-      cal = Icalendar::Calendar.new
-      cal.prodid = '-//startupsofpuertorico.com//Startups of Puerto Rico//EN'
-      events.each do |event|
-        calendar_event = Icalendar::Event.new
-        calendar_event.start = event.date
-        calendar_event.summary = event.name
-        calendar_event.description = "At #{event.place} on #{event.date.strftime("%B %d @ %I:%M %p")}"
-        cal.add_event(calendar_event)
-      end
-      return cal.to_ical
+      RiCal.Calendar do |ical|
+        ical.add_x_property 'X-WR-CALNAME', "Startups of Puerto Rico"
+        ical.prodid('-//startupsofpuertorico.com//Startups of Puerto Rico//EN')
+        events.each do |event|
+          ical.event do |calendar_event|
+            calendar_event.dtstart = event.date
+            calendar_event.summary = event.name
+            calendar_event.description = "At #{event.place} on #{event.date.strftime("%B %d @ %I:%M %p")}"
+            calendar_event.url = event.link
+            calendar_event.location = event.place
+          end
+        end
+      end.export
     end
 end

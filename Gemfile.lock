@@ -7,6 +7,13 @@ GIT
       activerecord (~> 4.0.0)
 
 GIT
+  remote: git://github.com/espen/ri_cal.git
+  revision: 86e3998a0ab65762ae70d949f43bb324182b0f09
+  branch: master
+  specs:
+    ri_cal (0.9.4)
+
+GIT
   remote: git://github.com/pokonski/public_activity.git
   revision: f8cacfa50ef06b5c9af58efe9c5f229e50c10818
   branch: master
@@ -104,7 +111,6 @@ GEM
       tilt
     hike (1.2.3)
     i18n (0.6.5)
-    icalendar (1.4.3)
     jbuilder (1.5.1)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -253,7 +259,6 @@ DEPENDENCIES
   excon (~> 0.25.3)
   factory_girl_rails
   friendly_id (~> 5.0.0.alpha1)!
-  icalendar (~> 1.4.3)
   jbuilder (~> 1.5)
   jquery-rails
   kaminari
@@ -264,6 +269,7 @@ DEPENDENCIES
   rails (= 4.0.0)
   rails_12factor
   rails_admin
+  ri_cal (~> 0.9.4)!
   rmagick
   rspec-rails
   sass-rails (~> 4.0.0)
