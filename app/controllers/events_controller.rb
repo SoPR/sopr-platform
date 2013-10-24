@@ -31,6 +31,7 @@ class EventsController < ApplicationController
     # Returns Icalendar string for upcoming events
     def events_to_ical(events)
       cal = Icalendar::Calendar.new
+      cal.prodid = '-//startupsofpuertorico.com//Startups of Puerto Rico//EN'
       events.each do |event|
         calendar_event = Icalendar::Event.new
         calendar_event.start = event.date
