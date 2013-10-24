@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.where(['date >= ?', DateTime.now]).order('date')
 
     respond_to do |format|
       format.html
