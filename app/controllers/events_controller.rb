@@ -3,14 +3,16 @@ class EventsController < ApplicationController
 
   # GET /events
   # GET /events.json
+  # GET /events.rss
+  # GET /events.ics
   def index
     @events = Event.where(['date >= ?', DateTime.now]).order('date')
-    puts events_to_ical(@events)
+
     respond_to do |format|
       format.html
       format.json
       format.rss { render :layout => false }
-      format.ics { send_data(events_to_ical(@events), :filename => "sopr.ics",
+      format.ics { send_data(events_to_ical(), :filename => "sopr.ics",
         :disposition => "inline; filename=sopr.ics", :type => "text/calendar")}
     end
   end
@@ -27,19 +29,7 @@ class EventsController < ApplicationController
     end
 
     # Returns Icalendar string for upcoming events
-    def events_to_ical(events)
-      RiCal.Calendar do |ical|
-        ical.add_x_property 'X-WR-CALNAME', "Startups of Puerto Rico"
-        ical.prodid('-//startupsofpuertorico.com//Startups of Puerto Rico//EN')
-        events.each do |event|
-          ical.event do |calendar_event|
-            calendar_event.dtstart = event.date
-            calendar_event.summary = event.name
-            calendar_event.description = "At #{event.place} on #{event.date.strftime("%B %d @ %I:%M %p")}"
-            calendar_event.url = event.link
-            calendar_event.location = event.place
-          end
-        end
-      end.export
+    def events_to_ical()
+      render_to_string(:action => "index.ics.erb", :layout => false)
     end
 end

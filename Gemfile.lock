@@ -7,13 +7,6 @@ GIT
       activerecord (~> 4.0.0)
 
 GIT
-  remote: git://github.com/espen/ri_cal.git
-  revision: 86e3998a0ab65762ae70d949f43bb324182b0f09
-  branch: master
-  specs:
-    ri_cal (0.9.4)
-
-GIT
   remote: git://github.com/pokonski/public_activity.git
   revision: f8cacfa50ef06b5c9af58efe9c5f229e50c10818
   branch: master
@@ -269,7 +262,6 @@ DEPENDENCIES
   rails (= 4.0.0)
   rails_12factor
   rails_admin
-  ri_cal (~> 0.9.4)!
   rmagick
   rspec-rails
   sass-rails (~> 4.0.0)

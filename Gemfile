@@ -42,7 +42,6 @@ gem "excon", "~> 0.25.3"
 gem "acts-as-taggable-on", "~> 2.4.1"
 gem 'friendly_id', '~> 5.0.0.alpha1', github: 'FriendlyId/friendly_id', branch: 'master'
 gem "public_activity", "~> 1.4.0", github: 'pokonski/public_activity', branch: 'master'
-gem 'ri_cal', '~> 0.9.4', github: 'espen/ri_cal', branch: 'master'
 
 group :production do
   gem 'rails_12factor'
