@@ -17,7 +17,7 @@
         <a href="<%= events_url(format: :rss) %>">
           <%= image_tag "rss.png" %>
         </a>
-        <a href="<%= events_url(format: :ics) %>">
+        <a href="<%= events_url(format: :ics, protocol: 'webcal') %>">
           <%= image_tag "calendar.png" %>
         </a>
       </div>
