@@ -31,11 +31,11 @@ describe EventsController do
   let(:valid_session) { {} }
 
   describe "GET index" do
-    it "assigns all events as @events" do
-      event = Event.create! valid_attributes
-      get :index, {}, valid_session
-      assigns(:events).should eq([event])
+    it "returns http success" do
+      get 'index'
+      response.should be_success
     end
+
   end
 
 end

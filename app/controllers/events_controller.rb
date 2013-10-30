@@ -3,13 +3,17 @@ class EventsController < ApplicationController
 
   # GET /events
   # GET /events.json
+  # GET /events.rss
+  # GET /events.ics
   def index
-    @events = Event.all
+    @events = Event.where(['date >= ?', DateTime.now]).order('date')
 
     respond_to do |format|
       format.html
       format.json
       format.rss { render :layout => false }
+      format.ics { send_data(events_to_ical(), :filename => "sopr.ics",
+        :disposition => "inline; filename=sopr.ics", :type => "text/calendar")}
     end
   end
 
@@ -22,5 +26,10 @@ class EventsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:name, :place, :date, :image, :url)
+    end
+
+    # Returns Icalendar string for upcoming events
+    def events_to_ical()
+      render_to_string(:action => "index.ics.erb", :layout => false)
     end
 end

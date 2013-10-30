@@ -1,6 +1,13 @@
-// Place all the styles related to the Events controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.subscribe-to-events {
+  text-align: right;
+  span {
+    margin-right: 5px;
+  }
+  span, img {
+    vertical-align: middle;
+    display: inline-block;
+  }
+}
 .span6:nth-child(2n+1) {
   margin-left: 0;
 }

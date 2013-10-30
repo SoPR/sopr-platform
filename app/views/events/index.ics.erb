@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//startupsofpuertorico.com//Startups of Puerto Rico//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Startups of Puerto Rico
+X-WR-TIMEZONE:America/Puerto_Rico
+<% for event in @events %>
+BEGIN:VEVENT
+SUMMARY:<%= event.name %>
+DTSTART;TZID=US-Eastern:<%= event.date.strftime("%Y%m%dT%H%M%S") %>
+UID:<%= event.link %>
+DESCRIPTION:At <%= event.place %> on <%= event.date.strftime("%B %d @ %I:%M %p") %>
+URL:<%= event.link %>
+END:VEVENT
+<% end %>
+END:VCALENDAR
