@@ -6,7 +6,8 @@ class EventsController < ApplicationController
   # GET /events.rss
   # GET /events.ics
   def index
-    @events = Event.where(['date >= ?', DateTime.now.utc]).order('date')
+    now = Time.now.in_time_zone('Eastern Time (US & Canada)')
+    @events = Event.where(['date >= ?', now.to_date]).order('date')
 
     respond_to do |format|
       format.html
