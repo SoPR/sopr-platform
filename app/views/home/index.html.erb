@@ -1,44 +1,118 @@
-<div class='sopr-home'>
-  <div class='container'>
+<%= render partial: "shared/flash_messages", flash: flash %>
+<section id='sopr-home-image' class='sopr-image-home'>
+  <div class='sopr-home-opacity'></div>
+  <div class="navbar navbar-static-top">
+    <div class="site-nav">
+      <div class="container-fluid container-padding">
+        <div class='logo'>
+          <%= link_to '/' do %>
+           <h1>Startup of Puerto Rico</h1>
+          <% end %>
+        </div>
+        <nav class='nav-menu'>
+          <div id='menu'>
+            <ul>
+              <li><%= link_to 'About Us', about_path %></li>
+              <li><%= link_to 'People', users_path %></li>
+              <li><%= link_to 'Startups', startups_path %></li>
+              <li><%= link_to 'Events', events_path %></li>
+              <li style='padding-right:12px;'><%= link_to 'Communities', groups_path %></li>
+              <li><%= link_to 'Resources', resources_path %></li>
+            </ul>
+          </div>
+          <div class='mobile-menu'>
+            <li class='dropdown mobile-menu-dropdown'>
+              <a href="#" class='dropdown-toggle' data-toggle='dropdown' style='color:white;'>
+                Menu <i class='icon-chevron-down icon-white'></i>
+              </a>
+              <ul class='dropdown-menu' style='margin-top:20px;'>
+                <li><%= link_to 'About', about_path %></li>
+                <li class="separator"></li>
+                <li><%= link_to 'People', users_path %></li>
+                <li class="separator"></li>
+                <li><%= link_to 'Startups', startups_path %></li>
+                <li class="separator"></li>
+                <li><%= link_to 'Events', events_path %></li>
+                <li class="separator"></li>
+                <li><%= link_to 'Communities', groups_path %></li>
+                <li class="separator"></li>
+                <li><%= link_to 'Resources', resources_path %></li>
+              </ul>
+            </li>
+          </div>
+        </nav>
+        <div class='authentication'>
+          <ul>
+            <% if current_user %>
+            <li class="dropdown last">
+              <a class="dropdown-toggle nav-link" id="dLabel" data-toggle="dropdown" href="#" style='padding:16px 15px;margin: 4px 0;'>
+                <img class='user-image' src="<%= gravatar_for current_user %>">
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style='margin-top:73px;'>
+                <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+                <li class="separator"></li>
+                <% current_user.startups.each do |startup| %>
+                <li><%= link_to startup.name, edit_startup_path(startup) %></li>
+                <% end %>
+                <li><%= link_to "Create Startup Profile", new_startup_path %></li>
+                <li class="separator"></li>
+                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+              </ul>
+            </li>
+            <% else %>
+            <li class="last"><%= link_to "Sign in", new_user_session_path, class: 'nav-link main-btn' %></li>
+            <% end %>
+          </ul>
+        </div>     
+      </div>
+    </div>
+  </div>
+  <div class='container-fluid container-padding'>
     <div class='row-fluid'>
-      <div class='marketing-section-signup'>
-        <div class='span7 heading'>
-          <h2>Get Connected to the Startup Community!</h2>
-          <p>We encourage you to sign up - you’ll get all the latest news about event updates, resources, jobs and more. Additionally, we’ll keep you up to date about the changes coming soon here on the website.</p>
-        </div>
-        <div class='span5 form-signup-home'>
-          <%= render 'devise/registrations/homeform' %>
+      <div class='span12'>
+        <div class='span4'>
+          <h2 class='sopr-home-tile'>Get Connected to the Startup Community!</h2>
+          <div><%= link_to "Sign Up", new_registration_path(resource_name), class: 'nav-link main-home-btn main-btn' %></div>
+          <p class='sopr-home-subtitle'><a href="">Learn More</a></p>
         </div>
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class='marketing-section'>
-      <div class='container'>
-        <div class='row-fluid'>
-          <div class='span4'>
-            <div class='teaser-icon'>
-              <span><%= image_tag "resources.png", :class => 'featured-icon' %></span>
-            </div>
-            <h3>Resources</h3>
-            <p>Share links, videos, articles and repositories publicly or with the people you work with.</p>
+</section>
+<!-- learn more tabs -->
+<section id='learn-more'>
+  <div class='container-fluid container-padding'>
+    <div class='row-fluid section-padding tabbable'>
+      <div class='span5 hidden-phone'>
+        <h3 class='learn-more-title'>You’ll get the latest news on</h3>
+        <ul class="learn-more-steps nav nav-tabs nav-stacked">
+          <li class='active'><a href="#event-tab" data-toggle="tab">Startup Events</a></li>
+          <li><a href="#resource-tab" data-toggle="tab">Startup Resources</a></li>
+          <li><a href="#talent-tab" data-toggle="tab">Creative Talent</a></li>
+          <li><a href="#group-tab" data-toggle="tab">User Groups</a></li>
+          <li><a href="#conversation-tab" data-toggle="tab">Conversations</a></li>
+        </ul>
+      </div>
+      <div class="span7 tab-content no-tab" style='overflow:hidden;'>
+        <div class="tab-pane active"  id="event-tab">
+          <div class='visible-phone'>
+            <h3 class='learn-more-title learn-more-mobile'>Get the Latest Tech Events</h3>
           </div>
-          <div class='span4'>
-            <div class='teaser-icon'>
-              <span><%= image_tag "time.png", :class => 'featured-icon' %></span>
-            </div>
-            <h3>Events</h3>
-            <p>Stay on top of events across your community and connect with other founders and mentors.</p>
-          </div>
-          <div class='span4'>
-            <div class='teaser-icon'>
-              <span><%= image_tag "chat.png", :class => 'featured-icon' %></span>
-            </div>
-            <h3>Conversations</h3>
-            <p>Talk to other founders and mentors and get the best answers from across the community.</p>
-          </div>
+          <%= image_tag "events-tab-image.png" %>
+        </div>
+        <div class="tab-pane fade" id="resource-tab">
+          <h4>Resrouce</h4>
+        </div>
+        <div class="tab-pane fade" id="talent-tab">
+          <h4>Talent</h4>
+        </div>
+        <div class="tab-pane fade" id="group-tab">
+          <%= image_tag "groups-tab-image.png" %>
+        </div>
+        <div class="tab-pane fade" id="conversation-tab">
+          <h4>Conversation</h4>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>

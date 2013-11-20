@@ -1,27 +1,53 @@
 <% content_for :subheader do %>
-<section id="subheader">
-  <div class="container">
-    <div class='row-fluid'>
-      <div class='span12'>
-        <h1 class='subheader-title'>A collection of Startup Events in Puerto Rico</h1>
-      </div>
+<section id='subheader-image' class='subheader-image-events'>
+  <div class='subheader-opacity'></div>
+  <div class='container-fluid container-padding'>
+    <div class='row-fluid subheader-wrapper-content'>
+      <h2 class='subheader-tile'>Events</h2>
+      <p class='subheader-subtitle'>A collection of Startup Events in Puerto Rico</p>
     </div>
   </div>
 </section>
 <% end %>
-<section id='events'>
+
+<% content_for :subnavigation do %>
+<section id='subheader-navigation'>
   <div class='container'>
     <div class="row-fluid">
-      <div class="subscribe-to-events span4 offset8">
-        <span>Subscribe to Events</span>
-        <a href="http://feedpress.me/sopr">
+      <div class="subheader-navigation-events span2 offset10">
+        <a href="#myModal" data-toggle="modal">Add To Calendar</a>
+      </div>
+    </div>
+  </div>
+</section> 
+<% end %>
+ 
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Add To My Calender</h3>
+  </div>
+  <div class="modal-body">
+    <div class='modal-content-wrapper'>
+      <div class='modal-two-column'>
+         <a class='target' href="<%= events_url(format: :rss) %>">
           <%= image_tag "rss.png" %>
+          <h4 class='target-title'>RSS</h4>
         </a>
-        <a href="<%= events_url(format: :ics, protocol: 'webcal') %>">
+      </div>
+      <div class='modal-two-column'>
+        <a class='target' href="<%= events_url(format: :ics, protocol: 'webcal') %>">
           <%= image_tag "calendar.png" %>
+          <h4 class='target-title'>Calendar</h4>
         </a>
       </div>
     </div>
+  </div>
+</div>
+
+<section id='content'>
+  <div class='container'>
     <div class='row-fluid'>
      <div class='span12'>
       <% @events.group_by { |t| t.date.month }.each do |month, events| %>

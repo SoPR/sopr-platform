@@ -1,6 +1,6 @@
 <div class="navbar navbar-static-top">
   <div class="site-nav">
-    <div class="container-fluid header-padding">
+    <div class="container-fluid container-padding">
       <div class='logo'>
         <%= link_to '/' do %>
          <h1>Startup of Puerto Rico</h1>
@@ -13,7 +13,7 @@
             <li><%= link_to 'People', users_path %></li>
             <li><%= link_to 'Startups', startups_path %></li>
             <li><%= link_to 'Events', events_path %></li>
-            <li><%= link_to 'Groups', groups_path %></li>
+            <li style='padding-right:12px;'><%= link_to 'Communities', groups_path %></li>
             <li><%= link_to 'Resources', resources_path %></li>
           </ul>
         </div>
@@ -31,7 +31,7 @@
               <li class="separator"></li>
               <li><%= link_to 'Events', events_path %></li>
               <li class="separator"></li>
-              <li><%= link_to 'Groups', groups_path %></li>
+              <li><%= link_to 'Communities', groups_path %></li>
               <li class="separator"></li>
               <li><%= link_to 'Resources', resources_path %></li>
             </ul>

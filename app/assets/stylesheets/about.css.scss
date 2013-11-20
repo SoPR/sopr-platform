@@ -1,3 +1,87 @@
 // Place all the styles related to the about controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#about {
+  margin-top: 50px;
+}
+.about-title {
+  color: #5e5f65;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 auto 20px;
+  padding-bottom: 4px;
+  border-bottom: 3px solid #f4f5f8;
+  display: inline-block;
+}
+.about-content {
+  font-size: 14px;
+  line-height: 1.8;
+}
+#about .span4 {
+  margin-left:11%;
+}
+.founded {
+  list-style:none;
+  margin-left: 0;
+}
+.founded img {
+  opacity:.85;
+}
+.founded span {
+  padding-left: 20px;
+  font-size: 65px;
+  font-weight: 700;
+  top: 23px;
+  position: relative;
+}
+.section-divider {
+  border-top:1px solid #f4f5f8;
+  margin-bottom: 50px;
+}
+.section-title {
+  color: #5e5f65;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 auto 20px;
+  padding-bottom: 4px;
+  border-bottom: 3px solid #f4f5f8;
+  text-align: center;
+  width: 40%
+}
+.our-value {
+  padding-left: 50px;
+  margin-bottom: 15px;
+}
+.value-icon-1 {
+  float: left;
+  margin-left: -40px;
+  margin-top: 5px;
+  font: normal normal 32px octicons;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+}
+.value-title {
+  font-size: 20px;
+  font-weight: 500;
+  padding-bottom: 4px;
+}
+.value-content {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.start-building {
+  float:left;
+  width:100%;
+  margin-top:50px;
+}
+.start-building h3 {
+  font-size: 19px;
+  text-align: center;
+  text-transform: uppercase;
+  color:#1681f9;
+  font-weight:600;
+}
+

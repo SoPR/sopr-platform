@@ -1,4 +1,5 @@
 class ResourcesController < ApplicationController
-    def index
-    end
+  layout 'application'
+  def index
+  end
 end

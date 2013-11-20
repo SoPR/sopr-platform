@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
-    def index
-    end
+  layout 'application'
+  def index
+  end
 end

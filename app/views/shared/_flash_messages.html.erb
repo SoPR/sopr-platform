@@ -1,6 +1,6 @@
 <% if !flash.empty? %>
     <section class="flash-message">
-      <div class="container">
+      <div>
         <% flash.each do |type, message| %>
           <div class="alert <%= bootstrap_class_for(type) %> fade in">
             <button class="close" data-dismiss="alert">×</button>

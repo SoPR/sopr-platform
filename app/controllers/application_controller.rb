@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  layout 'application'
   # Public Activity
   include PublicActivity::StoreController
 

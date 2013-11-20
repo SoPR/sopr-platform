@@ -47,6 +47,9 @@
 .event-card a:hover{
   color:#333;
 }
+.event-image {
+  border-bottom: 1px solid #f4f4f4;
+}
 .event-image img {
   border-radius: 2px 2px 0 0;
   -webkit-border-radius: 2px 2px 0 0;
@@ -73,3 +76,18 @@
   line-height: 16px;
   margin: 10px 0 5px;
 }
+#subheader-navigation .row-fluid .offset10:first-child {
+  margin-left: 83.470085%;
+}
+.subheader-navigation-events {
+  font-weight: 500;
+  line-height: 30px;
+  padding: 5px 0;
+  text-align: center;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+.subheader-navigation-events a, .subheader-navigation-events a:hover {
+  color: #ff4351;
+}
+

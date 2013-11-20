@@ -1,18 +1,43 @@
-<div class="container">
-  <div class="footer">
-    <ul class="footer-links pull-right">
-      <li><a href=" https://groups.google.com/forum/#!forum/startupspr">Google Group</a></li>
-      <li><a href="http://elweb.us1.list-manage.com/subscribe?u=2da892786ddd5a32ddc8471c3&id=0442d93b6d">Mailing List</a></li>
-      <li><a href="https://twitter.com/startupsofpr">Twitter</a></li>
-      <li><a href="https://www.hipchat.com/gcEE9CIpS">Chat</a></li>
-      <!-- <li><a href="/blog">Blog</a></li> -->
-    </ul>
-    <div class="made-with-love">Made with <i class="icon-heart-2 heart"></i> in P.R.</div>
-    <ul class="footer-links pull-left">
-        <li><%= link_to 'About', about_path %></li>
-        <li><a href="https://github.com/jpadilla/sopr-platform">GitHub</a></li>
-        <li><a href="https://github.com/SoPR/CAP/pull/3">CAP-003</a></li>
-        <li><a href="mailto: jpadilla@getblimp.com">Contact</a></li>
-    </ul>
-  </div><!-- /.site-footer -->
-</div>
+<section id='footer'>
+  <div class='container-fluid container-padding'>
+    <div class='row-fluid'>
+      <div class='span12 footer-wrapper'>
+        <div class='row-fluid'>
+          <div class='span2 hidden-tablet hidden-phone'>
+            <div class='footer-section-wrapper'>
+              <%= link_to '/' do %>
+               <h1>Startup of Puerto Rico</h1>
+              <% end %>
+            </div><!-- .footer-section-wrapper -->
+          </div>
+          <div class='span2 hidden-tablet hidden-phone'>
+            <nav class='footer-section-wrapper'>
+              <ul>
+                <li><a href="https://github.com/jpadilla/sopr-platform">Github</a></li>
+                <li><a href="https://github.com/SoPR/CAP">CAP's</a></li>
+                <li><a href="mailto: hello.sopr-platform@blimp.io">Get in touch</a></li>
+                <li><a href="mailto: hello.sopr-platform@blimp.io">Submit and idea</a></li>
+              </ul>
+            </nav><!-- .footer-section-wrapper -->
+          </div>
+          <div class='span2 hidden-tablet hidden-phone'>
+            <nav class='footer-section-wrapper'>
+              <ul>
+                <li><%= link_to 'About', about_path %></li>
+                <li><%= link_to 'Events', events_path %></li>
+                <li><a href="https://twitter.com/startupsofpr">Twitter</a></li>
+                <li><a href=" https://groups.google.com/forum/#!forum/startupspr">Google Group</a></li>
+              </ul>
+            </nav><!-- .footer-section-wrapper -->
+          </div>
+          <div class='span6 hidden-tablet hidden-phone'>
+            <nav class='footer-section-wrapper-right'>
+              <p>This application is released under the MIT License and<br> avaliable in Github.</p>
+              <p>Made with <i class="icon-heart-2 heart"></i> in P.R.</p>
+            </nav><!-- .footer-section-wrapper-right -->
+          </div>
+        </div>
+      </div><!-- .footer-wrapper -->
+    </div>
+  </div>
+</section><!-- #footer -->

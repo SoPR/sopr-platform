@@ -1,4 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
+  layout 'application'
   def update
     clear_password_params if password_blank?
 

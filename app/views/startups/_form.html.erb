@@ -30,8 +30,8 @@
     </div>
     <div class='span5' style='margin-top: 10px;'>
       <div class="logo-input-wrapper">
-        <a href="#" class="btn upload-photo">Choose a logo</a>
-        <a href="#" class="btn reset-photo">Reset to default</a>
+        <a href="#" class="main-btn grey-btn upload-photo">Choose a logo</a>
+        <a href="#" class="main-btn grey-btn-outline reset-photo">Reset to default</a>
         <div class="logo-wrapper">
           <%= image_tag(@startup.image_url(:thumb), :class => "startuplogo") %>
           <%= f.hidden_field :default_logo %>
@@ -51,7 +51,7 @@
       <%= f.text_field :pitch, :maxlength => 40 %>
     </div>
     <div class='span4'>
-      <p class='form-input-message' style='margin-top:3px;'>
+      <p class='form-input-message' style='margin-top:11px;'>
         Describe your product in 3-5 words. Consider comparing your product with something that people are already familiar with.
       </p>
     </div>
@@ -92,7 +92,7 @@
     </div>
   </div>
   <div class='form-content-action'>
-    <%= f.submit (@startup.id? ? 'Update Startup' : 'Create Startup'), :class => 'main-btn blue-btn btn-large' %>
+    <%= f.submit (@startup.id? ? 'Update Startup' : 'Create Startup'), :class => 'main-btn btn-large' %>
     <%= link_to 'Cancel', startups_path %>
 
     <% unless @startup.new_record? %>

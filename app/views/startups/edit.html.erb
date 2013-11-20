@@ -1,6 +1,6 @@
 <% content_for :subheader do %>
 <section id="subheader">
-  <div class="container">
+  <div class="container-fluid container-padding">
     <div class='row-fluid'>
       <div class='span12'>
         <h1 class='subheader-form-title'>Edit startup: <%= @startup.name %></h1>
@@ -9,7 +9,7 @@
   </div>
 </section>
 <% end %>
-<div class='container'>
+<div class='container-fluid container-padding'>
   <div class='row-fluid'>
     <div id='content'>
       <%= render 'form' %>

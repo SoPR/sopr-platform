@@ -1,17 +1,17 @@
 <% content_for :subheader do %>
-<section id="subheader">
-  <div class="container">
-    <div class='row-fluid'>
-      <div class='span12'>
-        <h1 class='subheader-title'>People a collection of creative talent from P.R.</h1>
-      </div>
+<section id='subheader-image' class='subheader-image-talent'>
+  <div class='subheader-opacity'></div>
+  <div class='container-fluid container-padding'>
+    <div class='row-fluid subheader-wrapper-content'>
+      <h2 class='subheader-tile'>People</h2>
+      <p class='subheader-subtitle'>A collection of creative talent from Puerto Rico </p>
     </div>
   </div>
 </section>
 <% end %>
-<section class='container'>
-  <div class='row-fluid'>
-    <div id='content'>
+<section id='content'>
+  <div class='container'>
+    <div class='row-fluid'>
       <% @users.in_groups_of(3) do |group| %>
         <div class="row">
           <% group.compact.each do |user| %>

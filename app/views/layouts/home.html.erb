@@ -16,13 +16,8 @@ that aim to make Puerto Rico a world-class startup hub.">
   <%= favicon_link_tag "favicon.ico" %>
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">
   <%= auto_discovery_link_tag(:rss, events_url(format: :rss)) %>
-  <script src="//use.edgefonts.net/montez.js"></script>
 </head>
 <body class="<%= body_class %>">
-  <%= render partial: "shared/flash_messages", flash: flash %>
-  <%= render "shared/header" %>
-  <%= yield :subheader %>
-  <%= yield :subnavigation %>
   <%= yield %>
   <%= render "shared/footer" %>
   <%= javascript_include_tag "application" %>
