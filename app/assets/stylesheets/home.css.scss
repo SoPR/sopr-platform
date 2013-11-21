@@ -174,7 +174,7 @@
 .learn-more-steps > li.active:before {
   color: white;
   font-size:12px;
-  background: #1681f9;
+  background: #353535;
 }
 
 .nav-tabs.nav-stacked > li.active > a {
@@ -206,13 +206,14 @@
   background:none;
 }
 .learn-more-mobile {
-  margin-bottom: 35px;
+  margin-bottom: 25px;
   text-align: center;
   display:block;
+  margin-top: 20px;
 }
 @media (max-width: 480px) { 
   .learn-more-title {
-    font-size: 18px;
+    font-size: 16px;
   }
   .container-padding {
     padding: 0 20px;

@@ -16,4 +16,5 @@
 //= require_tree .
 
 // = require bootstrap.min
+// = require smooth-scroll
 // = require jquery.tokeninput

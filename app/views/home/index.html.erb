@@ -16,7 +16,7 @@
               <li><%= link_to 'People', users_path %></li>
               <li><%= link_to 'Startups', startups_path %></li>
               <li><%= link_to 'Events', events_path %></li>
-              <li style='padding-right:12px;'><%= link_to 'Communities', groups_path %></li>
+              <li style='padding: 0 25px 0 15px;'><%= link_to 'Communities', groups_path %></li>
               <li><%= link_to 'Resources', resources_path %></li>
             </ul>
           </div>
@@ -72,8 +72,8 @@
       <div class='span12'>
         <div class='span4'>
           <h2 class='sopr-home-tile'>Get Connected to the Startup Community!</h2>
-          <div><%= link_to "Sign Up", new_registration_path(resource_name), class: 'nav-link main-home-btn main-btn' %></div>
-          <p class='sopr-home-subtitle'><a href="">Learn More</a></p>
+          <div><%= link_to "Get Started", new_registration_path(resource_name), class: 'nav-link main-home-btn main-btn' %></div>
+          <p class='sopr-home-subtitle'><a class="scroll" data-speed="700" href="#bazinga">Learn More</a></p>
         </div>
       </div>
     </div>
@@ -84,35 +84,46 @@
   <div class='container-fluid container-padding'>
     <div class='row-fluid section-padding tabbable'>
       <div class='span5 hidden-phone'>
-        <h3 class='learn-more-title'>You’ll get the latest news on</h3>
+        <h3 id='bazinga' class='learn-more-title'>You’ll get the latest news on</h3>
         <ul class="learn-more-steps nav nav-tabs nav-stacked">
-          <li class='active'><a href="#event-tab" data-toggle="tab">Startup Events</a></li>
-          <li><a href="#resource-tab" data-toggle="tab">Startup Resources</a></li>
-          <li><a href="#talent-tab" data-toggle="tab">Creative Talent</a></li>
-          <li><a href="#group-tab" data-toggle="tab">User Groups</a></li>
-          <li><a href="#conversation-tab" data-toggle="tab">Conversations</a></li>
+          <li class='active'><a href="#event-tab" data-toggle="tab">Tech Events</a></li>
+          <li><a href="#resource-tab" data-toggle="tab">Tech Resources</a></li>
+          <li><a href="#talent-tab" data-toggle="tab">Puerto Rico Creative Talent</a></li>
+          <li><a href="#group-tab" data-toggle="tab">Tech Communities</a></li>
         </ul>
       </div>
-      <div class="span7 tab-content no-tab" style='overflow:hidden;'>
+      <div class="span7 tab-content no-tab hidden-phone" style='overflow:hidden;'>
         <div class="tab-pane active"  id="event-tab">
-          <div class='visible-phone'>
-            <h3 class='learn-more-title learn-more-mobile'>Get the Latest Tech Events</h3>
-          </div>
           <%= image_tag "events-tab-image.png" %>
         </div>
         <div class="tab-pane fade" id="resource-tab">
-          <h4>Resrouce</h4>
+          <%= image_tag "resources-tab-image.png" %>
         </div>
         <div class="tab-pane fade" id="talent-tab">
-          <h4>Talent</h4>
+          <%= image_tag "talent-tab-image.png" %>
         </div>
         <div class="tab-pane fade" id="group-tab">
           <%= image_tag "groups-tab-image.png" %>
         </div>
-        <div class="tab-pane fade" id="conversation-tab">
-          <h4>Conversation</h4>
+      </div><!-- tablet and web view -->
+      <div class="span7 no-tab visible-phone" style='overflow:hidden;'>
+        <div>
+          <h3 class='learn-more-title learn-more-mobile'>Get the Latest Tech Events</h3>
+          <%= image_tag "events-tab-image.png" %>
         </div>
-      </div>
+        <div>
+          <h3 class='learn-more-title learn-more-mobile'>Get & Share Tech Resources</h3>
+          <%= image_tag "resources-tab-image.png" %>
+        </div>
+        <div>
+          <h3 class='learn-more-title learn-more-mobile'>Puerto Rico Creative Talent</h3>
+          <%= image_tag "talent-tab-image.png" %>
+        </div>
+        <div>
+          <h3 class='learn-more-title learn-more-mobile'>Join Tech Communities</h3>
+          <%= image_tag "groups-tab-image.png" %>
+        </div>
+      </div><!-- mobile view -->
     </div>
   </div>
 </section>

@@ -4,3 +4,6 @@
 
 $("[data-toggle=tab]").click ->
   $($(this).attr("href")).toggleClass "active"  if $(this).parent().hasClass("active")
+
+
+

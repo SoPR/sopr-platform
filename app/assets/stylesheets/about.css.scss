@@ -18,8 +18,9 @@
   font-size: 14px;
   line-height: 1.8;
 }
-#about .span4 {
+#about .span5 {
   margin-left:11%;
+  width: 31.17094%;
 }
 .founded {
   list-style:none;
@@ -53,15 +54,22 @@
   padding-left: 50px;
   margin-bottom: 15px;
 }
+.value-icon {
+  position: absolute;
+  height: 33px;
+  width: 34px;
+  margin-left: -42px;
+  margin-top: 12px;
+  opacity:.85;
+}
 .value-icon-1 {
-  float: left;
-  margin-left: -40px;
-  margin-top: 5px;
-  font: normal normal 32px octicons;
-  line-height: 1;
-  display: inline-block;
-  text-decoration: none;
-  -webkit-font-smoothing: antialiased;
+  background: image-url('mega-icon-fork.png') no-repeat;
+}
+.value-icon-2 {
+  background: image-url('mega-icon-team.png') no-repeat;
+}
+.value-icon-3 {
+  background: image-url('mega-icon-upload.png') no-repeat;
 }
 .value-title {
   font-size: 20px;
