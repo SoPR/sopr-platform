@@ -1,4 +1,5 @@
 SoprPlatform::Application.routes.draw do
+  use_doorkeeper
   get 'events', to: 'events#index'
 
   get 'about', to: 'about#index'
