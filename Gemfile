@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
@@ -27,21 +27,16 @@ gem 'jbuilder', '~> 1.5'
 
 gem 'kaminari'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
-
 gem 'multi_json', '1.7.9'
 gem 'devise', '3.0.3'
 gem 'rails_admin'
 gem 'carrierwave'
 gem 'rmagick'
-gem "asset_sync"
-gem "excon", "~> 0.25.3"
-gem "acts-as-taggable-on", "~> 2.4.1"
+gem 'asset_sync'
+gem 'excon', '~> 0.25.3'
+gem 'acts-as-taggable-on', '~> 2.4.1'
 gem 'friendly_id', '~> 5.0.0.alpha1', github: 'FriendlyId/friendly_id', branch: 'master'
-gem "public_activity", "~> 1.4.0", github: 'pokonski/public_activity', branch: 'master'
+gem 'public_activity', '~> 1.4.0', github: 'pokonski/public_activity', branch: 'master'
 gem 'doorkeeper', '~> 0.7.0'
 
 group :production do
@@ -57,8 +52,6 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  # Use debugger
-  # gem 'debugger', group: [:development, :test]
 end
 
 group :test do
