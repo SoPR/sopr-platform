@@ -21,10 +21,6 @@ Ruby On Rails project for [CAP-003](https://github.com/SoPR/CAP/pull/3)
 Installation
 ---------------------
 
-If you don't already have Rails 4.0 run:
-
-    $ gem install rails --version 4.0.0 --no-ri --no-rdoc
-
 To install every dependency:
 
     $ bin/bundle install
