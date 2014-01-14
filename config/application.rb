@@ -33,5 +33,10 @@ module SoprPlatform
 
     # add app/assets/fonts to the asset path
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+    # Enforce I18n locales in Rails and gems
+    # This will be a default configuration in future releases
+    config.i18n.enforce_available_locales = true
+    I18n.enforce_available_locales = true
   end
 end
