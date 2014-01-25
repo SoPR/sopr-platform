@@ -5,5 +5,8 @@
 $("[data-toggle=tab]").click ->
   $($(this).attr("href")).toggleClass "active"  if $(this).parent().hasClass("active")
 
-
+$ ->
+  $('select').change (e) ->
+    oldClass = $('.profile-image').attr('class').split(' ').pop()
+    $('.profile-image').removeClass(oldClass).addClass e.target.value
 
