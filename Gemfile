@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.0.3'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
@@ -36,7 +36,7 @@ gem 'asset_sync'
 gem 'excon', '~> 0.25.3'
 gem 'acts-as-taggable-on', '~> 2.4.1'
 gem 'friendly_id', '~> 5.0.0.alpha1', github: 'FriendlyId/friendly_id', branch: 'master'
-gem 'public_activity', '~> 1.4.0', github: 'pokonski/public_activity', branch: 'master'
+gem 'public_activity', '~> 1.4.0', github: 'pokonski/public_activity', branch: '1-4-stable'
 gem 'doorkeeper', '~> 0.7.0'
 
 group :production do
