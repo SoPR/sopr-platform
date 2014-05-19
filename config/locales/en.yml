@@ -26,3 +26,10 @@ en:
       about_x_hours:
         one: "1 hour"
         other: "%{count} hours"
+  views:
+      pagination:
+        first: "&laquo; First"
+        last: "Last &raquo;"
+        previous: "&lsaquo;&lsaquo;"
+        next: "&rsaquo;&rsaquo;"
+        truncate: "&hellip;"

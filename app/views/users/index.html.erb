@@ -19,8 +19,11 @@
           <% end %>
         </div>
       <% end %>
+
+      <div class="row">
+        <%= paginate @users %>
+      </div>
     </div>
   </div>
 
-  <%= paginate @users %>
 </section>
