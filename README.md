@@ -1,6 +1,8 @@
 ![SoPR](https://github.com/jpadilla/sopr-platform/raw/master/app/assets/images/logo.png)
 
-[![Build Status](https://travis-ci.org/jpadilla/sopr-platform.png?branch=master)](https://travis-ci.org/jpadilla/sopr-platform) [![Dependency Status](https://gemnasium.com/jpadilla/sopr-platform.png)](https://gemnasium.com/jpadilla/sopr-platform) [![Code Climate](https://codeclimate.com/github/jpadilla/sopr-platform.png)](https://codeclimate.com/github/jpadilla/sopr-platform)
+[![Build Status](http://img.shields.io/travis/SoPR/sopr-platform.svg?style=flat)](https://travis-ci.org/SoPR/sopr-platform) 
+[![Dependency Status](http://img.shields.io/gemnasium/SoPR/sopr-platform.png?style=flat)](https://gemnasium.com/SoPR/sopr-platform) 
+[![Code Climate](http://img.shields.io/codeclimate/github/SoPR/sopr-platform.png?style=flat)](https://codeclimate.com/github/SoPR/sopr-platform)
 
 Ruby On Rails project for [CAP-003](https://github.com/SoPR/CAP/pull/3)
 
