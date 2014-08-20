@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.3'
+gem 'rails', '4.0.9'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
@@ -58,4 +58,4 @@ group :test do
   gem 'capybara'
 end
 
-gem 'seed_dump'
+gem 'sprockets' , '~> 2.11.0'
