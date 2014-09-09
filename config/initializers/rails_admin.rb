@@ -43,6 +43,10 @@ RailsAdmin.config do |config|
 
   ################  Model configuration  ################
 
+  config.model 'User' do
+    exclude_fields :confirmed_at, :confirmation_token, :remember_created_at, :current_sign_in_at, :last_sign_in_at
+  end
+
   # Each model configuration can alternatively:
   #   - stay here in a `config.model 'ModelName' do ... end` block
   #   - go in the model definition file in a `rails_admin do ... end` block
